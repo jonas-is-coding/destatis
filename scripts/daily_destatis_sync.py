@@ -43,6 +43,8 @@ REPORT_PATH = META_DIR / "latest_sync_report.csv"
 RUNLOG_PATH = META_DIR / "runs.jsonl"
 
 HREF_RE = re.compile(r'href=["\']([^"\']+)["\']', re.IGNORECASE)
+ANCHOR_RE = re.compile(r'<a[^>]+href=["\']([^"\']+\.csv)["\'][^>]*>(.*?)</a>', re.IGNORECASE | re.DOTALL)
+TAG_RE = re.compile(r"<[^>]+>")
 MISSING_TOKENS = {"...", ".", "x", "-", "–", ""}
 
 
@@ -103,10 +105,38 @@ def looks_like_html(url: str) -> bool:
     return p.endswith(".html") or p.endswith("_node.html") or p.endswith("_inhalt.html")
 
 
-def crawl_csv_links(session: requests.Session) -> list[str]:
+def clean_text(s: str) -> str:
+    s = TAG_RE.sub(" ", s)
+    s = re.sub(r"\s+", " ", s).strip()
+    return s
+
+
+def extract_csv_docs(html: str, page_url: str) -> dict[str, dict[str, str]]:
+    docs: dict[str, dict[str, str]] = {}
+    matches = list(ANCHOR_RE.finditer(html))
+    for i, m in enumerate(matches):
+        href, raw_label = m.group(1), m.group(2)
+        csv_url = normalize_url(page_url, href)
+        label = clean_text(raw_label)
+        # Use surrounding text as lightweight context (no AI).
+        start = max(0, m.start() - 500)
+        end = min(len(html), m.end() + 500)
+        context = clean_text(html[start:end])
+        if len(context) > 300:
+            context = context[:300].rstrip() + "..."
+        docs[csv_url] = {
+            "label": label or Path(urlparse(csv_url).path).stem.replace("_", " "),
+            "context": context,
+            "page_url": page_url,
+        }
+    return docs
+
+
+def crawl_csv_links(session: requests.Session) -> tuple[list[str], dict[str, dict[str, str]]]:
     visited: set[str] = set()
     queue: deque[str] = deque(SEED_URLS)
     csv_links: set[str] = set()
+    csv_docs: dict[str, dict[str, str]] = {}
 
     while queue and len(visited) < MAX_PAGES and len(csv_links) < MAX_CSV_FILES:
         url = queue.popleft()
@@ -120,6 +150,7 @@ def crawl_csv_links(session: requests.Session) -> list[str]:
                 continue
         except requests.RequestException:
             continue
+        csv_docs.update(extract_csv_docs(r.text, url))
 
         for href in HREF_RE.findall(r.text):
             abs_url = normalize_url(url, href)
@@ -130,7 +161,7 @@ def crawl_csv_links(session: requests.Session) -> list[str]:
             elif looks_like_html(abs_url) and abs_url not in visited:
                 queue.append(abs_url)
 
-    return sorted(csv_links)
+    return sorted(csv_links), csv_docs
 
 
 def infer_delimiter(sample: str) -> str:
@@ -291,7 +322,10 @@ def upload_single_repo(api: HfApi) -> None:
     api.upload_folder(folder_path=str(ROOT / "metadata"), repo_id=HF_REPO_ID, repo_type="dataset", path_in_repo="metadata")
 
 
-def dataset_readme(title: str, source_url: str) -> str:
+def dataset_readme(title: str, source_url: str, doc: dict[str, str] | None) -> str:
+    label = (doc or {}).get("label", title)
+    context = (doc or {}).get("context", "")
+    page_url = (doc or {}).get("page_url", "")
     return f"""---
 license: other
 language:
@@ -307,24 +341,27 @@ tags:
 
 # {title}
 
-## Inoffizieller Hinweis / Unofficial note
-Dieses Repository ist ein **privates Open-Source-Projekt** und **nicht offiziell** vom Statistischen Bundesamt (Destatis) betrieben.
-
+## Unofficial Notice
 This repository is a **private open-source project** and is **not an official** repository of the Federal Statistical Office of Germany (Destatis).
 
-## Quelle / Source
-- {source_url}
+## Data Explanation
+- Official dataset label: {label}
+- Source CSV: {source_url}
+- Source page: {page_url or "n/a"}
+
+## Official Context Snippet
+{context or "No structured description snippet was found on the source page; only the source link is available."}
 """
 
 
-def upload_multi_repo(api: HfApi, rec: FileRecord, csv_path: Path) -> str:
+def upload_multi_repo(api: HfApi, rec: FileRecord, csv_path: Path, doc: dict[str, str] | None) -> str:
     repo_name = repo_slug_from_relpath(rec.rel_path)
     repo_id = f"{HF_NAMESPACE}/{repo_name}"
     api.create_repo(repo_id=repo_id, repo_type="dataset", exist_ok=True)
     api.upload_file(path_or_fileobj=str(csv_path), path_in_repo="data.csv", repo_id=repo_id, repo_type="dataset")
 
     tmp_readme = ROOT / "metadata" / ".tmp_readme.md"
-    tmp_readme.write_text(dataset_readme(repo_name, rec.source_url), encoding="utf-8")
+    tmp_readme.write_text(dataset_readme(repo_name, rec.source_url, doc), encoding="utf-8")
     api.upload_file(path_or_fileobj=str(tmp_readme), path_in_repo="README.md", repo_id=repo_id, repo_type="dataset")
     tmp_readme.unlink(missing_ok=True)
     return repo_id
@@ -352,7 +389,7 @@ def main() -> int:
     session = requests.Session()
     api = HfApi(token=HF_TOKEN)
 
-    csv_links = crawl_csv_links(session)
+    csv_links, csv_docs = crawl_csv_links(session)
     manifest = load_manifest()
     known = manifest.get("files", {})
 
@@ -407,7 +444,7 @@ def main() -> int:
                         hf_repo_id="",
                         last_seen_utc=now,
                     )
-                    hf_repo_id = upload_multi_repo(api, prev_rec, ml_path)
+                    hf_repo_id = upload_multi_repo(api, prev_rec, ml_path, csv_docs.get(url))
                     known[rel]["hf_repo_id"] = hf_repo_id
                     known[rel]["last_seen_utc"] = now
                     published_multi += 1
@@ -454,7 +491,7 @@ def main() -> int:
         )
 
         if ml_ready and HF_PUBLISH_MODE == "multi":
-            hf_repo_id = upload_multi_repo(api, rec, ml_path)
+            hf_repo_id = upload_multi_repo(api, rec, ml_path, csv_docs.get(url))
             rec.hf_repo_id = hf_repo_id
             published_multi += 1
 

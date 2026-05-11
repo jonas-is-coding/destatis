@@ -27,7 +27,6 @@ jobs:
       - name: Run daily sync
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-          HF_REPO_ID: ${{ secrets.HF_REPO_ID }}
         run: |
           python scripts/daily_destatis_sync.py
 

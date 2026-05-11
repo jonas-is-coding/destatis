@@ -344,6 +344,7 @@ def main() -> int:
     new_or_changed = 0
     kept_ml = 0
     published_multi = 0
+    backfilled_multi = 0
 
     for url in csv_links:
         try:
@@ -357,6 +358,41 @@ def main() -> int:
         rel = safe_path_from_url(url)
         prev = known.get(rel)
         if prev and prev.get("sha256") == sha:
+            # No source change, but in multi mode we may still need to publish
+            # a per-file dataset repo for already processed ML-ready files.
+            if HF_PUBLISH_MODE == "multi" and prev.get("ml_ready") and not prev.get("hf_repo_id"):
+                ml_path = ML_DIR / rel
+                if not ml_path.exists():
+                    header, rows, meta = parse_ml_ready(raw.decode("utf-8", errors="replace"))
+                    if bool(meta.get("ml_ready", False)) and header and rows:
+                        ml_path.parent.mkdir(parents=True, exist_ok=True)
+                        with ml_path.open("w", encoding="utf-8", newline="") as f:
+                            w = csv.writer(f)
+                            w.writerow(header)
+                            w.writerows(rows)
+                if ml_path.exists():
+                    prev_rec = FileRecord(
+                        source_url=prev.get("source_url", url),
+                        rel_path=rel,
+                        sha256=sha,
+                        bytes_size=int(prev.get("bytes_size", len(raw))),
+                        rows=int(prev.get("rows", 0)),
+                        columns=int(prev.get("columns", 0)),
+                        numeric_ratio=float(prev.get("numeric_ratio", 0)),
+                        missing_ratio=float(prev.get("missing_ratio", 1)),
+                        inconsistent_rows=int(prev.get("inconsistent_rows", 0)),
+                        ml_ready=bool(prev.get("ml_ready", True)),
+                        note=str(prev.get("note", "")),
+                        hf_repo_id="",
+                        last_seen_utc=now,
+                    )
+                    hf_repo_id = upload_multi_repo(api, prev_rec, ml_path)
+                    known[rel]["hf_repo_id"] = hf_repo_id
+                    known[rel]["last_seen_utc"] = now
+                    published_multi += 1
+                    backfilled_multi += 1
+                    continue
+
             known[rel]["last_seen_utc"] = now
             continue
 
@@ -421,6 +457,7 @@ def main() -> int:
         "single_repo_id": HF_REPO_ID if HF_PUBLISH_MODE == "single" else "",
         "multi_repo_namespace": HF_NAMESPACE if HF_PUBLISH_MODE == "multi" else "",
         "multi_repos_published": published_multi,
+        "multi_repos_backfilled": backfilled_multi,
     }
     write_runlog(summary)
     print(json.dumps(summary, ensure_ascii=False))

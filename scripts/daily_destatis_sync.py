@@ -427,7 +427,7 @@ def upload_multi_repo(
     existing_repo_ids: set[str] | None = None,
 ) -> str:
     repo_name = repo_slug_from_relpath(rec.rel_path)
-    repo_id = f"{HF_NAMESPACE}/{repo_name}"
+    repo_id = rec.hf_repo_id if repo_belongs_to_namespace(rec.hf_repo_id, HF_NAMESPACE) else f"{HF_NAMESPACE}/{repo_name}"
     if HF_README_ONLY_BACKFILL:
         if existing_repo_ids is None:
             return ""
@@ -522,7 +522,7 @@ def main() -> int:
                         inconsistent_rows=int(prev.get("inconsistent_rows", 0)),
                         ml_ready=bool(prev.get("ml_ready", True)),
                         note=str(prev.get("note", "")),
-                        hf_repo_id="",
+                        hf_repo_id=str(prev.get("hf_repo_id", "")),
                         last_seen_utc=now,
                     )
                     existing_header: list[str] = []
@@ -578,7 +578,7 @@ def main() -> int:
             inconsistent_rows=int(meta.get("inconsistent_rows", 0)),
             ml_ready=ml_ready,
             note=str(meta.get("note", "")),
-            hf_repo_id="",
+            hf_repo_id=str(prev.get("hf_repo_id", "")) if prev else "",
             last_seen_utc=now,
         )
 

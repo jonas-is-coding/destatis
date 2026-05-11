@@ -2,11 +2,13 @@
 from __future__ import annotations
 
 import csv
+import html
 import hashlib
 import io
 import json
 import os
 import re
+import unicodedata
 from collections import Counter, deque
 from dataclasses import asdict, dataclass
 from datetime import datetime, timezone
@@ -46,6 +48,7 @@ RUNLOG_PATH = META_DIR / "runs.jsonl"
 HREF_RE = re.compile(r'href=["\']([^"\']+)["\']', re.IGNORECASE)
 ANCHOR_RE = re.compile(r'<a[^>]+href=["\']([^"\']+\.csv)["\'][^>]*>(.*?)</a>', re.IGNORECASE | re.DOTALL)
 TAG_RE = re.compile(r"<[^>]+>")
+HEADING_RE = re.compile(r"<h[1-4][^>]*>(.*?)</h[1-4]>", re.IGNORECASE | re.DOTALL)
 MISSING_TOKENS = {"...", ".", "x", "-", "–", ""}
 
 
@@ -126,8 +129,36 @@ def looks_like_html(url: str) -> bool:
 
 
 def clean_text(s: str) -> str:
+    s = html.unescape(s)
     s = TAG_RE.sub(" ", s)
     s = re.sub(r"\s+", " ", s).strip()
+    return s
+
+
+def decode_bytes(raw: bytes) -> str:
+    for enc in ("utf-8", "cp1252", "latin-1"):
+        try:
+            return raw.decode(enc)
+        except UnicodeDecodeError:
+            continue
+    return raw.decode("utf-8", errors="replace")
+
+
+def ascii_normalize(s: str) -> str:
+    s = html.unescape(s)
+    repl = {
+        "ä": "ae",
+        "ö": "oe",
+        "ü": "ue",
+        "Ä": "Ae",
+        "Ö": "Oe",
+        "Ü": "Ue",
+        "ß": "ss",
+    }
+    for k, v in repl.items():
+        s = s.replace(k, v)
+    s = unicodedata.normalize("NFKD", s)
+    s = "".join(ch for ch in s if not unicodedata.combining(ch))
     return s
 
 
@@ -138,12 +169,20 @@ def extract_csv_docs(html: str, page_url: str) -> dict[str, CsvDoc]:
         href, raw_label = m.group(1), m.group(2)
         csv_url = normalize_url(page_url, href)
         label = clean_text(raw_label)
-        # Use surrounding text as lightweight context (no AI).
-        start = max(0, m.start() - 500)
-        end = min(len(html), m.end() + 500)
-        context = clean_text(html[start:end])
-        if len(context) > 300:
-            context = context[:300].rstrip() + "..."
+        # Prefer list-item context (clean prose), then nearest heading.
+        context = ""
+        li_start = html.rfind("<li", 0, m.start())
+        li_end = html.find("</li>", m.end())
+        if li_start != -1 and li_end != -1 and li_end > li_start:
+            context = clean_text(html[li_start : li_end + 5])
+        if not context:
+            heading = ""
+            for hm in HEADING_RE.finditer(html[: m.start()]):
+                heading = clean_text(hm.group(1))
+            if heading:
+                context = f"Section heading: {heading}"
+        if len(context) > 360:
+            context = context[:360].rstrip() + "..."
         docs[csv_url] = CsvDoc(
             label=label or Path(urlparse(csv_url).path).stem.replace("_", " "),
             context=context,
@@ -195,7 +234,7 @@ def sanitize_header(cells: list[str], n_cols: int) -> list[str]:
     used: set[str] = set()
     for i in range(n_cols):
         raw = cells[i] if i < len(cells) else f"col_{i+1}"
-        c = re.sub(r"\s+", "_", raw.strip().lower())
+        c = re.sub(r"\s+", "_", ascii_normalize(raw.strip().lower()))
         c = re.sub(r"[^a-z0-9_]+", "", c)
         if not c:
             c = f"col_{i+1}"
@@ -353,9 +392,23 @@ def dataset_readme(
     label = doc.label if doc else title
     context = doc.context if doc else ""
     page_url = doc.page_url if doc else ""
+    if len(label) < 8 or re.fullmatch(r"(bv\s*4\.?1|x13|originalwert)", label.lower()):
+        label = Path(rec.rel_path).stem.replace("_", " ").replace("-", " ").title()
     column_lines = "\n".join([f"- `{c}`" for c in header[:12]]) if header else "- `value`"
     if len(header) > 12:
         column_lines += "\n- `...`"
+    field_notes = []
+    for c in header[:12]:
+        lc = c.lower()
+        if "datum" in lc or "date" in lc:
+            field_notes.append(f"- `{c}`: time index / reporting period.")
+        elif "veraenderung" in lc or "veraenderung" in lc or "change" in lc:
+            field_notes.append(f"- `{c}`: period-over-period or year-over-year change metric.")
+        elif "trend" in lc or "x13" in lc or "bv41" in lc:
+            field_notes.append(f"- `{c}`: seasonally/calendar adjusted trend component.")
+        elif "original" in lc:
+            field_notes.append(f"- `{c}`: raw/original value from source table.")
+    field_notes_block = "\n".join(field_notes[:6]) if field_notes else "- Column semantics follow Destatis source naming."
     quality_note = rec.note if rec.note else "Passed baseline quality checks."
     return f"""---
 license: other
@@ -391,6 +444,9 @@ Files:
 
 Columns (sample):
 {column_lines}
+
+## Field Notes
+{field_notes_block}
 
 ## Processing Pipeline
 The source CSV is processed without AI generation:
@@ -522,7 +578,7 @@ def main() -> int:
             ):
                 ml_path = ML_DIR / rel
                 if not ml_path.exists():
-                    header, rows, meta = parse_ml_ready(raw.decode("utf-8", errors="replace"))
+                    header, rows, meta = parse_ml_ready(decode_bytes(raw))
                     if bool(meta.get("ml_ready", False)) and header and rows:
                         ml_path.parent.mkdir(parents=True, exist_ok=True)
                         with ml_path.open("w", encoding="utf-8", newline="") as f:
@@ -571,7 +627,7 @@ def main() -> int:
         raw_path.parent.mkdir(parents=True, exist_ok=True)
         raw_path.write_bytes(raw)
 
-        header, rows, meta = parse_ml_ready(raw.decode("utf-8", errors="replace"))
+        header, rows, meta = parse_ml_ready(decode_bytes(raw))
         ml_ready = bool(meta.get("ml_ready", False))
 
         ml_path = ML_DIR / rel

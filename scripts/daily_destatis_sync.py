@@ -1,0 +1,365 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+
+import csv
+import hashlib
+import io
+import json
+import os
+import re
+from collections import Counter, deque
+from dataclasses import dataclass, asdict
+from datetime import datetime, timezone
+from pathlib import Path
+from urllib.parse import urljoin, urlparse
+
+import requests
+from huggingface_hub import HfApi
+
+DEST_DOMAIN = "www.destatis.de"
+SEED_URLS = [
+    "https://www.destatis.de/EN/Service/OpenData/short-term-indicators.html",
+    "https://www.destatis.de/DE/Service/OpenData/konjunkturindikatoren.html",
+    "https://www.destatis.de/EN/Service/OpenData/_node.html",
+    "https://www.destatis.de/DE/Service/OpenData/_node.html",
+]
+
+MAX_PAGES = int(os.getenv("MAX_PAGES", "200"))
+MAX_CSV_FILES = int(os.getenv("MAX_CSV_FILES", "1000"))
+REQUEST_TIMEOUT = int(os.getenv("REQUEST_TIMEOUT", "45"))
+HF_REPO_ID = os.getenv("HF_REPO_ID", "jonas-is-coding/destatis-open-data-ml-ready")
+HF_TOKEN = os.getenv("HF_TOKEN")
+
+ROOT = Path(__file__).resolve().parents[1]
+RAW_DIR = ROOT / "data" / "raw"
+ML_DIR = ROOT / "data" / "ml_ready"
+META_DIR = ROOT / "metadata"
+MANIFEST_PATH = META_DIR / "manifest.json"
+REPORT_PATH = META_DIR / "latest_sync_report.csv"
+RUNLOG_PATH = META_DIR / "runs.jsonl"
+
+HREF_RE = re.compile(r'href=["\']([^"\']+)["\']', re.IGNORECASE)
+MISSING_TOKENS = {"...", ".", "x", "-", "–", ""}
+
+
+@dataclass
+class FileRecord:
+    source_url: str
+    rel_path: str
+    sha256: str
+    bytes_size: int
+    rows: int
+    columns: int
+    numeric_ratio: float
+    missing_ratio: float
+    inconsistent_rows: int
+    ml_ready: bool
+    note: str
+    last_seen_utc: str
+
+
+def safe_path_from_url(url: str) -> str:
+    p = urlparse(url).path.strip("/")
+    s = re.sub(r"[^A-Za-z0-9._/-]+", "_", p)
+    if not s.endswith(".csv"):
+        s += ".csv"
+    return s
+
+
+def is_internal(url: str) -> bool:
+    return urlparse(url).netloc in {"", DEST_DOMAIN}
+
+
+def normalize_url(base: str, href: str) -> str:
+    return urljoin(base, href.split("#", 1)[0])
+
+
+def looks_like_csv(url: str) -> bool:
+    return urlparse(url).path.lower().endswith(".csv")
+
+
+def looks_like_html(url: str) -> bool:
+    p = urlparse(url).path.lower()
+    return p.endswith(".html") or p.endswith("_node.html") or p.endswith("_inhalt.html")
+
+
+def crawl_csv_links(session: requests.Session) -> list[str]:
+    visited: set[str] = set()
+    queue: deque[str] = deque(SEED_URLS)
+    csv_links: set[str] = set()
+
+    while queue and len(visited) < MAX_PAGES and len(csv_links) < MAX_CSV_FILES:
+        url = queue.popleft()
+        if url in visited:
+            continue
+        visited.add(url)
+
+        try:
+            r = session.get(url, timeout=REQUEST_TIMEOUT)
+            if r.status_code >= 400:
+                continue
+        except requests.RequestException:
+            continue
+
+        for href in HREF_RE.findall(r.text):
+            abs_url = normalize_url(url, href)
+            if not is_internal(abs_url):
+                continue
+            if looks_like_csv(abs_url):
+                csv_links.add(abs_url)
+            elif looks_like_html(abs_url) and abs_url not in visited:
+                queue.append(abs_url)
+
+    return sorted(csv_links)
+
+
+def infer_delimiter(sample: str) -> str:
+    cands = [";", ",", "\t", "|"]
+    counts = {c: sample.count(c) for c in cands}
+    return max(counts, key=counts.get) if any(counts.values()) else ";"
+
+
+def sanitize_header(cells: list[str], n_cols: int) -> list[str]:
+    out: list[str] = []
+    used: set[str] = set()
+    for i in range(n_cols):
+        raw = cells[i] if i < len(cells) else f"col_{i+1}"
+        c = re.sub(r"\s+", "_", raw.strip().lower())
+        c = re.sub(r"[^a-z0-9_]+", "", c)
+        if not c:
+            c = f"col_{i+1}"
+        base = c
+        k = 2
+        while c in used:
+            c = f"{base}_{k}"
+            k += 1
+        used.add(c)
+        out.append(c)
+    return out
+
+
+def looks_numeric(v: str) -> bool:
+    if not v:
+        return False
+    t = v.strip().replace(" ", "")
+    t = t.replace(".", "").replace(",", ".")
+    return bool(re.fullmatch(r"[-+]?\d+(\.\d+)?", t))
+
+
+def normalize_cell(v: str) -> str:
+    t = v.strip()
+    if t in MISSING_TOKENS:
+        return ""
+    t = t.replace(" ", "")
+    if re.fullmatch(r"[-+]?\d{1,3}(\.\d{3})+(,\d+)?", t):
+        return t.replace(".", "").replace(",", ".")
+    if re.fullmatch(r"[-+]?\d+,\d+", t):
+        return t.replace(",", ".")
+    return t
+
+
+def parse_ml_ready(raw_text: str) -> tuple[list[str], list[list[str]], dict]:
+    lines = [ln for ln in raw_text.splitlines() if ln.strip()]
+    if len(lines) < 2:
+        return [], [], {"ml_ready": False, "note": "too few lines"}
+
+    delimiter = infer_delimiter("\n".join(lines[:200]))
+    rows = list(csv.reader(io.StringIO("\n".join(lines[:8000])), delimiter=delimiter))
+    if not rows:
+        return [], [], {"ml_ready": False, "note": "unparseable"}
+
+    lens = [len(r) for r in rows]
+    common_cols = Counter(lens).most_common(1)[0][0]
+    inconsistent = sum(1 for n in lens if n != common_cols)
+
+    start_idx = 1 if (len(rows) > 1 and len(rows[0]) <= 1 and len(rows[1]) >= 2) else 0
+    if start_idx >= len(rows):
+        return [], [], {"ml_ready": False, "note": "missing header"}
+
+    header = sanitize_header(rows[start_idx], common_cols)
+    body = rows[start_idx + 1 :]
+    if not body:
+        return [], [], {"ml_ready": False, "note": "no data rows"}
+
+    normalized: list[list[str]] = []
+    missing = 0
+    total = 0
+    for row in body:
+        fixed = (row + [""] * common_cols)[:common_cols]
+        nr = []
+        for c in fixed:
+            x = normalize_cell(c)
+            if x == "":
+                missing += 1
+            total += 1
+            nr.append(x)
+        normalized.append(nr)
+
+    numeric_cols = 0
+    for i in range(common_cols):
+        vals = [r[i] for r in normalized if r[i] != ""]
+        if not vals:
+            continue
+        if (sum(1 for v in vals if looks_numeric(v)) / len(vals)) >= 0.7:
+            numeric_cols += 1
+
+    numeric_ratio = numeric_cols / max(1, common_cols)
+    missing_ratio = missing / max(1, total)
+
+    score = 100
+    notes = []
+    if inconsistent > max(2, int(len(rows) * 0.03)):
+        score -= 30
+        notes.append("inconsistent rows")
+    if numeric_ratio < 0.08:
+        score -= 20
+        notes.append("low numeric signal")
+    if missing_ratio > 0.45:
+        score -= 25
+        notes.append("high missing ratio")
+    if common_cols > 150:
+        score -= 15
+        notes.append("very wide")
+    if len(normalized) < 50:
+        score -= 10
+        notes.append("small")
+
+    ml_ready = score >= 60
+    note = "; ".join(notes) if notes else "ok"
+    return header, normalized, {
+        "rows": len(normalized),
+        "columns": common_cols,
+        "numeric_ratio": numeric_ratio,
+        "missing_ratio": missing_ratio,
+        "inconsistent_rows": inconsistent,
+        "ml_ready": ml_ready,
+        "note": note,
+    }
+
+
+def load_manifest() -> dict:
+    if MANIFEST_PATH.exists():
+        return json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
+    return {"files": {}, "updated_at": None}
+
+
+def write_manifest(manifest: dict) -> None:
+    MANIFEST_PATH.parent.mkdir(parents=True, exist_ok=True)
+    MANIFEST_PATH.write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def upload_to_hf(api: HfApi) -> None:
+    api.create_repo(repo_id=HF_REPO_ID, repo_type="dataset", exist_ok=True)
+    api.upload_folder(folder_path=str(ROOT / "data"), repo_id=HF_REPO_ID, repo_type="dataset", path_in_repo="data")
+    api.upload_folder(folder_path=str(ROOT / "metadata"), repo_id=HF_REPO_ID, repo_type="dataset", path_in_repo="metadata")
+
+
+def write_report(records: list[FileRecord]) -> None:
+    META_DIR.mkdir(parents=True, exist_ok=True)
+    if not records:
+        return
+    with REPORT_PATH.open("w", encoding="utf-8", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=list(asdict(records[0]).keys()))
+        writer.writeheader()
+        for r in records:
+            writer.writerow(asdict(r))
+
+
+def write_runlog(payload: dict) -> None:
+    META_DIR.mkdir(parents=True, exist_ok=True)
+    with RUNLOG_PATH.open("a", encoding="utf-8") as f:
+        f.write(json.dumps(payload, ensure_ascii=False) + "\n")
+
+
+def main() -> int:
+    if not HF_TOKEN:
+        raise SystemExit("HF_TOKEN missing")
+
+    RAW_DIR.mkdir(parents=True, exist_ok=True)
+    ML_DIR.mkdir(parents=True, exist_ok=True)
+
+    session = requests.Session()
+    api = HfApi(token=HF_TOKEN)
+
+    csv_links = crawl_csv_links(session)
+    manifest = load_manifest()
+    known = manifest.get("files", {})
+
+    now = datetime.now(timezone.utc).isoformat()
+    updated_records: list[FileRecord] = []
+    new_or_changed = 0
+    kept_ml = 0
+
+    for url in csv_links:
+        try:
+            resp = session.get(url, timeout=REQUEST_TIMEOUT)
+            resp.raise_for_status()
+            raw = resp.content
+        except requests.RequestException:
+            continue
+
+        sha = hashlib.sha256(raw).hexdigest()
+        rel = safe_path_from_url(url)
+        prev = known.get(rel)
+        if prev and prev.get("sha256") == sha:
+            known[rel]["last_seen_utc"] = now
+            continue
+
+        new_or_changed += 1
+        raw_path = RAW_DIR / rel
+        raw_path.parent.mkdir(parents=True, exist_ok=True)
+        raw_path.write_bytes(raw)
+
+        header, rows, meta = parse_ml_ready(raw.decode("utf-8", errors="replace"))
+        ml_ready = bool(meta.get("ml_ready", False))
+
+        ml_rel = rel
+        ml_path = ML_DIR / ml_rel
+        if ml_ready and header and rows:
+            ml_path.parent.mkdir(parents=True, exist_ok=True)
+            with ml_path.open("w", encoding="utf-8", newline="") as f:
+                w = csv.writer(f)
+                w.writerow(header)
+                w.writerows(rows)
+            kept_ml += 1
+        elif ml_path.exists():
+            ml_path.unlink()
+
+        rec = FileRecord(
+            source_url=url,
+            rel_path=rel,
+            sha256=sha,
+            bytes_size=len(raw),
+            rows=int(meta.get("rows", 0)),
+            columns=int(meta.get("columns", 0)),
+            numeric_ratio=float(meta.get("numeric_ratio", 0)),
+            missing_ratio=float(meta.get("missing_ratio", 1)),
+            inconsistent_rows=int(meta.get("inconsistent_rows", 0)),
+            ml_ready=ml_ready,
+            note=str(meta.get("note", "")),
+            last_seen_utc=now,
+        )
+        updated_records.append(rec)
+        known[rel] = asdict(rec)
+
+    manifest["files"] = known
+    manifest["updated_at"] = now
+    write_manifest(manifest)
+    write_report(updated_records)
+
+    summary = {
+        "timestamp_utc": now,
+        "found_links": len(csv_links),
+        "new_or_changed": new_or_changed,
+        "ml_ready_added_or_updated": kept_ml,
+        "hf_repo_id": HF_REPO_ID,
+    }
+    write_runlog(summary)
+
+    upload_to_hf(api)
+    print(json.dumps(summary, ensure_ascii=False))
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

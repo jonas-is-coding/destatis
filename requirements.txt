@@ -1,0 +1,2 @@
+huggingface_hub>=0.31.0
+requests>=2.31.0

@@ -65,6 +65,13 @@ class FileRecord:
     last_seen_utc: str
 
 
+@dataclass
+class CsvDoc:
+    label: str
+    context: str
+    page_url: str
+
+
 def safe_path_from_url(url: str) -> str:
     p = urlparse(url).path.strip("/")
     s = re.sub(r"[^A-Za-z0-9._/-]+", "_", p)
@@ -111,8 +118,8 @@ def clean_text(s: str) -> str:
     return s
 
 
-def extract_csv_docs(html: str, page_url: str) -> dict[str, dict[str, str]]:
-    docs: dict[str, dict[str, str]] = {}
+def extract_csv_docs(html: str, page_url: str) -> dict[str, CsvDoc]:
+    docs: dict[str, CsvDoc] = {}
     matches = list(ANCHOR_RE.finditer(html))
     for i, m in enumerate(matches):
         href, raw_label = m.group(1), m.group(2)
@@ -124,19 +131,19 @@ def extract_csv_docs(html: str, page_url: str) -> dict[str, dict[str, str]]:
         context = clean_text(html[start:end])
         if len(context) > 300:
             context = context[:300].rstrip() + "..."
-        docs[csv_url] = {
-            "label": label or Path(urlparse(csv_url).path).stem.replace("_", " "),
-            "context": context,
-            "page_url": page_url,
-        }
+        docs[csv_url] = CsvDoc(
+            label=label or Path(urlparse(csv_url).path).stem.replace("_", " "),
+            context=context,
+            page_url=page_url,
+        )
     return docs
 
 
-def crawl_csv_links(session: requests.Session) -> tuple[list[str], dict[str, dict[str, str]]]:
+def crawl_csv_links(session: requests.Session) -> tuple[list[str], dict[str, CsvDoc]]:
     visited: set[str] = set()
     queue: deque[str] = deque(SEED_URLS)
     csv_links: set[str] = set()
-    csv_docs: dict[str, dict[str, str]] = {}
+    csv_docs: dict[str, CsvDoc] = {}
 
     while queue and len(visited) < MAX_PAGES and len(csv_links) < MAX_CSV_FILES:
         url = queue.popleft()
@@ -322,14 +329,24 @@ def upload_single_repo(api: HfApi) -> None:
     api.upload_folder(folder_path=str(ROOT / "metadata"), repo_id=HF_REPO_ID, repo_type="dataset", path_in_repo="metadata")
 
 
-def dataset_readme(title: str, source_url: str, doc: dict[str, str] | None) -> str:
-    label = (doc or {}).get("label", title)
-    context = (doc or {}).get("context", "")
-    page_url = (doc or {}).get("page_url", "")
+def dataset_readme(
+    title: str,
+    source_url: str,
+    doc: CsvDoc | None,
+    rec: FileRecord,
+    header: list[str],
+    now_iso: str,
+) -> str:
+    label = doc.label if doc else title
+    context = doc.context if doc else ""
+    page_url = doc.page_url if doc else ""
+    column_lines = "\n".join([f"- `{c}`" for c in header[:12]]) if header else "- `value`"
+    if len(header) > 12:
+        column_lines += "\n- `...`"
+    quality_note = rec.note if rec.note else "Passed baseline quality checks."
     return f"""---
 license: other
 language:
-- de
 - en
 tags:
 - destatis
@@ -348,20 +365,72 @@ This repository is a **private open-source project** and is **not an official** 
 - Official dataset label: {label}
 - Source CSV: {source_url}
 - Source page: {page_url or "n/a"}
+- Snapshot timestamp (UTC): {now_iso}
+
+## Overview
+This dataset contains a machine-learning-ready tabular version of a Destatis open-data series.
+The original CSV is transformed with deterministic preprocessing rules to support reproducible ML workflows.
+
+## Dataset Structure
+Files:
+- `data.csv`: normalized table
+- `README.md`: dataset card with provenance and processing notes
+
+Columns (sample):
+{column_lines}
+
+## Processing Pipeline
+The source CSV is processed without AI generation:
+- delimiter normalization
+- header normalization (`snake_case`)
+- missing-value token normalization
+- German numeric normalization (e.g. `1.234,56` -> `1234.56`)
+- row consistency checks
+
+## Data Quality Notes
+- Rows: {rec.rows}
+- Columns: {rec.columns}
+- Numeric columns ratio: {rec.numeric_ratio:.2f}
+- Missing ratio: {rec.missing_ratio:.2f}
+- Quality note: {quality_note}
 
 ## Official Context Snippet
-{context or "No structured description snippet was found on the source page; only the source link is available."}
+{context or "No structured context snippet was found on the source page; provenance is provided via source links above."}
+
+## Intended Use
+This dataset is suitable for:
+- time-series baseline modeling
+- tabular feature engineering
+- analytics and reproducible benchmarking
+
+## Limitations
+- Official revisions can update historical values.
+- Indicator semantics follow Destatis conventions and may require domain context.
+
+## License
+Source data rights follow the official Destatis open-data terms.
+Repository metadata uses `license: other` for Hugging Face compatibility.
+
+## Maintainer
+Maintained by the `destatis` Hugging Face organization (community-run, unofficial).
 """
 
 
-def upload_multi_repo(api: HfApi, rec: FileRecord, csv_path: Path, doc: dict[str, str] | None) -> str:
+def upload_multi_repo(
+    api: HfApi,
+    rec: FileRecord,
+    csv_path: Path,
+    doc: CsvDoc | None,
+    header: list[str],
+    now_iso: str,
+) -> str:
     repo_name = repo_slug_from_relpath(rec.rel_path)
     repo_id = f"{HF_NAMESPACE}/{repo_name}"
     api.create_repo(repo_id=repo_id, repo_type="dataset", exist_ok=True)
     api.upload_file(path_or_fileobj=str(csv_path), path_in_repo="data.csv", repo_id=repo_id, repo_type="dataset")
 
     tmp_readme = ROOT / "metadata" / ".tmp_readme.md"
-    tmp_readme.write_text(dataset_readme(repo_name, rec.source_url, doc), encoding="utf-8")
+    tmp_readme.write_text(dataset_readme(repo_name, rec.source_url, doc, rec, header, now_iso), encoding="utf-8")
     api.upload_file(path_or_fileobj=str(tmp_readme), path_in_repo="README.md", repo_id=repo_id, repo_type="dataset")
     tmp_readme.unlink(missing_ok=True)
     return repo_id
@@ -444,7 +513,13 @@ def main() -> int:
                         hf_repo_id="",
                         last_seen_utc=now,
                     )
-                    hf_repo_id = upload_multi_repo(api, prev_rec, ml_path, csv_docs.get(url))
+                    existing_header: list[str] = []
+                    try:
+                        with ml_path.open(encoding="utf-8") as f:
+                            existing_header = next(csv.reader(f))
+                    except Exception:
+                        existing_header = []
+                    hf_repo_id = upload_multi_repo(api, prev_rec, ml_path, csv_docs.get(url), existing_header, now)
                     known[rel]["hf_repo_id"] = hf_repo_id
                     known[rel]["last_seen_utc"] = now
                     published_multi += 1
@@ -491,7 +566,7 @@ def main() -> int:
         )
 
         if ml_ready and HF_PUBLISH_MODE == "multi":
-            hf_repo_id = upload_multi_repo(api, rec, ml_path, csv_docs.get(url))
+            hf_repo_id = upload_multi_repo(api, rec, ml_path, csv_docs.get(url), header, now)
             rec.hf_repo_id = hf_repo_id
             published_multi += 1
 

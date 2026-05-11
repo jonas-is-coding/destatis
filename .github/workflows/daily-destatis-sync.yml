@@ -27,7 +27,8 @@ jobs:
       - name: Run daily sync
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-          HF_NAMESPACE: jonas-is-coding
+          HF_NAMESPACE: destatis
+          HF_REQUIRED_NAMESPACE: destatis
           HF_PUBLISH_MODE: multi
           HF_DATASET_PREFIX: destatis-ml-
         run: |

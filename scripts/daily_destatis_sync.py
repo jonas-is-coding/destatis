@@ -28,7 +28,8 @@ MAX_PAGES = int(os.getenv("MAX_PAGES", "200"))
 MAX_CSV_FILES = int(os.getenv("MAX_CSV_FILES", "1000"))
 REQUEST_TIMEOUT = int(os.getenv("REQUEST_TIMEOUT", "45"))
 HF_TOKEN = os.getenv("HF_TOKEN")
-HF_NAMESPACE = os.getenv("HF_NAMESPACE", "jonas-is-coding")
+HF_NAMESPACE = os.getenv("HF_NAMESPACE", "destatis")
+HF_REQUIRED_NAMESPACE = os.getenv("HF_REQUIRED_NAMESPACE", "destatis")
 HF_PUBLISH_MODE = os.getenv("HF_PUBLISH_MODE", "multi")  # multi|single
 HF_REPO_ID = os.getenv("HF_REPO_ID", f"{HF_NAMESPACE}/destatis-open-data-ml-ready")
 HF_DATASET_PREFIX = os.getenv("HF_DATASET_PREFIX", "destatis-ml-")
@@ -327,6 +328,11 @@ def upload_multi_repo(api: HfApi, rec: FileRecord, csv_path: Path) -> str:
 def main() -> int:
     if not HF_TOKEN:
         raise SystemExit("HF_TOKEN missing")
+    if HF_NAMESPACE != HF_REQUIRED_NAMESPACE:
+        raise SystemExit(
+            f"Refusing to publish: HF_NAMESPACE='{HF_NAMESPACE}' does not match "
+            f"HF_REQUIRED_NAMESPACE='{HF_REQUIRED_NAMESPACE}'."
+        )
 
     RAW_DIR.mkdir(parents=True, exist_ok=True)
     ML_DIR.mkdir(parents=True, exist_ok=True)

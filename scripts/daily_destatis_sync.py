@@ -72,13 +72,18 @@ def safe_path_from_url(url: str) -> str:
 
 
 def repo_slug_from_relpath(rel_path: str) -> str:
-    base = rel_path.lower().replace("/", "-")
-    base = re.sub(r"\.csv$", "", base)
+    # Keep dataset repo names concise by using only the source file stem.
+    # Example:
+    # static/de_/opendata/data/private_konsumausgaben_preisbereinigt_x13.csv
+    # -> private-konsumausgaben-preisbereinigt-x13
+    base = Path(rel_path).stem.lower()
     base = re.sub(r"[^a-z0-9-]+", "-", base)
     base = re.sub(r"-+", "-", base).strip("-")
     if len(base) > 70:
         base = base[:70].rstrip("-")
-    return f"{HF_DATASET_PREFIX}{base}"
+    if HF_DATASET_PREFIX:
+        return f"{HF_DATASET_PREFIX}{base}"
+    return base
 
 
 def is_internal(url: str) -> bool:

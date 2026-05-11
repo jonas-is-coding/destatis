@@ -30,7 +30,7 @@ jobs:
           HF_NAMESPACE: destatis
           HF_REQUIRED_NAMESPACE: destatis
           HF_PUBLISH_MODE: multi
-          HF_DATASET_PREFIX: destatis-ml-
+          HF_DATASET_PREFIX: ""
         run: |
           python scripts/daily_destatis_sync.py
 

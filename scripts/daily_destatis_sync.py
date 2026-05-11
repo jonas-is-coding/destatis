@@ -424,10 +424,17 @@ def upload_multi_repo(
     doc: CsvDoc | None,
     header: list[str],
     now_iso: str,
+    existing_repo_ids: set[str] | None = None,
 ) -> str:
     repo_name = repo_slug_from_relpath(rec.rel_path)
     repo_id = f"{HF_NAMESPACE}/{repo_name}"
-    api.create_repo(repo_id=repo_id, repo_type="dataset", exist_ok=True)
+    if HF_README_ONLY_BACKFILL:
+        if existing_repo_ids is None:
+            return ""
+        if repo_id not in existing_repo_ids:
+            return ""
+    else:
+        api.create_repo(repo_id=repo_id, repo_type="dataset", exist_ok=True)
     if not HF_README_ONLY_BACKFILL:
         api.upload_file(path_or_fileobj=str(csv_path), path_in_repo="data.csv", repo_id=repo_id, repo_type="dataset")
 
@@ -463,6 +470,9 @@ def main() -> int:
     csv_links, csv_docs = crawl_csv_links(session)
     manifest = load_manifest()
     known = manifest.get("files", {})
+    existing_repo_ids: set[str] | None = None
+    if HF_PUBLISH_MODE == "multi" and HF_README_ONLY_BACKFILL:
+        existing_repo_ids = {d.id for d in api.list_datasets(author=HF_NAMESPACE)}
 
     now = datetime.now(timezone.utc).isoformat()
     updated_records: list[FileRecord] = []
@@ -521,7 +531,12 @@ def main() -> int:
                             existing_header = next(csv.reader(f))
                     except Exception:
                         existing_header = []
-                    hf_repo_id = upload_multi_repo(api, prev_rec, ml_path, csv_docs.get(url), existing_header, now)
+                    hf_repo_id = upload_multi_repo(
+                        api, prev_rec, ml_path, csv_docs.get(url), existing_header, now, existing_repo_ids
+                    )
+                    if not hf_repo_id:
+                        known[rel]["last_seen_utc"] = now
+                        continue
                     known[rel]["hf_repo_id"] = hf_repo_id
                     known[rel]["last_seen_utc"] = now
                     published_multi += 1
@@ -568,9 +583,10 @@ def main() -> int:
         )
 
         if ml_ready and HF_PUBLISH_MODE == "multi":
-            hf_repo_id = upload_multi_repo(api, rec, ml_path, csv_docs.get(url), header, now)
-            rec.hf_repo_id = hf_repo_id
-            published_multi += 1
+            hf_repo_id = upload_multi_repo(api, rec, ml_path, csv_docs.get(url), header, now, existing_repo_ids)
+            if hf_repo_id:
+                rec.hf_repo_id = hf_repo_id
+                published_multi += 1
 
         updated_records.append(rec)
         known[rel] = asdict(rec)

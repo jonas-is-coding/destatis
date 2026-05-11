@@ -33,6 +33,7 @@ HF_REQUIRED_NAMESPACE = os.getenv("HF_REQUIRED_NAMESPACE", "destatis")
 HF_PUBLISH_MODE = os.getenv("HF_PUBLISH_MODE", "multi")  # multi|single
 HF_REPO_ID = os.getenv("HF_REPO_ID", f"{HF_NAMESPACE}/destatis-open-data-ml-ready")
 HF_DATASET_PREFIX = os.getenv("HF_DATASET_PREFIX", "destatis-ml-")
+HF_README_ONLY_BACKFILL = os.getenv("HF_README_ONLY_BACKFILL", "false").lower() == "true"
 
 ROOT = Path(__file__).resolve().parents[1]
 RAW_DIR = ROOT / "data" / "raw"
@@ -427,7 +428,8 @@ def upload_multi_repo(
     repo_name = repo_slug_from_relpath(rec.rel_path)
     repo_id = f"{HF_NAMESPACE}/{repo_name}"
     api.create_repo(repo_id=repo_id, repo_type="dataset", exist_ok=True)
-    api.upload_file(path_or_fileobj=str(csv_path), path_in_repo="data.csv", repo_id=repo_id, repo_type="dataset")
+    if not HF_README_ONLY_BACKFILL:
+        api.upload_file(path_or_fileobj=str(csv_path), path_in_repo="data.csv", repo_id=repo_id, repo_type="dataset")
 
     tmp_readme = ROOT / "metadata" / ".tmp_readme.md"
     tmp_readme.write_text(dataset_readme(repo_name, rec.source_url, doc, rec, header, now_iso), encoding="utf-8")
@@ -587,6 +589,7 @@ def main() -> int:
         "new_or_changed": new_or_changed,
         "ml_ready_added_or_updated": kept_ml,
         "publish_mode": HF_PUBLISH_MODE,
+        "readme_only_backfill": HF_README_ONLY_BACKFILL,
         "single_repo_id": HF_REPO_ID if HF_PUBLISH_MODE == "single" else "",
         "multi_repo_namespace": HF_NAMESPACE if HF_PUBLISH_MODE == "multi" else "",
         "multi_repos_published": published_multi,

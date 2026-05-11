@@ -1,0 +1,34 @@
+name: Destatis README Backfill
+
+on:
+  workflow_dispatch:
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run README-only backfill
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_NAMESPACE: destatis
+          HF_REQUIRED_NAMESPACE: destatis
+          HF_PUBLISH_MODE: multi
+          HF_DATASET_PREFIX: ""
+          HF_README_ONLY_BACKFILL: "true"
+        run: |
+          python scripts/daily_destatis_sync.py

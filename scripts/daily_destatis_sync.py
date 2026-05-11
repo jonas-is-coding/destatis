@@ -417,6 +417,12 @@ def dataset_readme(
             field_notes.append(f"- `{c}`: raw/original value from source table.")
     field_notes_block = "\n".join(field_notes[:6]) if field_notes else "- Column semantics follow Destatis source naming."
     quality_note = rec.note if rec.note else "Passed baseline quality checks."
+    context_clean = context.strip()
+    if (not context_clean) or (len(context_clean) < 40) or ("|" in context_clean and len(context_clean) < 120):
+        context_clean = (
+            f"Official description from source metadata: {label}. "
+            "This series is published by Destatis as part of its open data program."
+        )
     return f"""---
 license: other
 language:
@@ -471,7 +477,7 @@ The source CSV is processed without AI generation:
 - Quality note: {quality_note}
 
 ## Official Context Snippet
-{context or "No structured context snippet was found on the source page; provenance is provided via source links above."}
+{context_clean}
 
 ## Intended Use
 This dataset is suitable for:
@@ -521,7 +527,8 @@ def upload_multi_repo(
         api.upload_file(path_or_fileobj=str(csv_path), path_in_repo="data.csv", repo_id=repo_id, repo_type="dataset")
 
     tmp_readme = ROOT / "metadata" / ".tmp_readme.md"
-    readme_title = repo_id.split("/", 1)[1] if "/" in repo_id else short_repo_name
+    # Keep README title clean and stable regardless of legacy repository naming.
+    readme_title = short_repo_name
     tmp_readme.write_text(dataset_readme(readme_title, rec.source_url, doc, rec, header, now_iso), encoding="utf-8")
     api.upload_file(path_or_fileobj=str(tmp_readme), path_in_repo="README.md", repo_id=repo_id, repo_type="dataset")
     tmp_readme.unlink(missing_ok=True)

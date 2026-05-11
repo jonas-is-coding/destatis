@@ -96,6 +96,18 @@ def repo_slug_from_relpath(rel_path: str) -> str:
     return base
 
 
+def legacy_repo_slug_from_relpath(rel_path: str) -> str:
+    # Historical naming scheme used earlier in this project.
+    # Example:
+    # static/de_/opendata/data/private_konsumausgaben_preisbereinigt_x13.csv
+    # -> destatis-ml-static-de-opendata-data-private-konsumausgaben-preisbereinigt-x13
+    base = rel_path.lower().replace("/", "-")
+    base = re.sub(r"\.csv$", "", base)
+    base = re.sub(r"[^a-z0-9-]+", "-", base)
+    base = re.sub(r"-+", "-", base).strip("-")
+    return f"destatis-ml-{base}"
+
+
 def is_internal(url: str) -> bool:
     return urlparse(url).netloc in {"", DEST_DOMAIN}
 
@@ -426,12 +438,19 @@ def upload_multi_repo(
     now_iso: str,
     existing_repo_ids: set[str] | None = None,
 ) -> str:
-    repo_name = repo_slug_from_relpath(rec.rel_path)
-    repo_id = rec.hf_repo_id if repo_belongs_to_namespace(rec.hf_repo_id, HF_NAMESPACE) else f"{HF_NAMESPACE}/{repo_name}"
+    short_repo_name = repo_slug_from_relpath(rec.rel_path)
+    legacy_repo_name = legacy_repo_slug_from_relpath(rec.rel_path)
+    preferred_repo_id = f"{HF_NAMESPACE}/{short_repo_name}"
+    legacy_repo_id = f"{HF_NAMESPACE}/{legacy_repo_name}"
+    repo_id = rec.hf_repo_id if repo_belongs_to_namespace(rec.hf_repo_id, HF_NAMESPACE) else preferred_repo_id
     if HF_README_ONLY_BACKFILL:
         if existing_repo_ids is None:
             return ""
-        if repo_id not in existing_repo_ids:
+        # README-only mode must target existing repos only.
+        # Try in order: explicit repo_id from manifest (if org), new short slug, old legacy slug.
+        candidates = [repo_id, preferred_repo_id, legacy_repo_id]
+        repo_id = next((c for c in candidates if c in existing_repo_ids), "")
+        if not repo_id:
             return ""
     else:
         api.create_repo(repo_id=repo_id, repo_type="dataset", exist_ok=True)
@@ -439,7 +458,8 @@ def upload_multi_repo(
         api.upload_file(path_or_fileobj=str(csv_path), path_in_repo="data.csv", repo_id=repo_id, repo_type="dataset")
 
     tmp_readme = ROOT / "metadata" / ".tmp_readme.md"
-    tmp_readme.write_text(dataset_readme(repo_name, rec.source_url, doc, rec, header, now_iso), encoding="utf-8")
+    readme_title = repo_id.split("/", 1)[1] if "/" in repo_id else short_repo_name
+    tmp_readme.write_text(dataset_readme(readme_title, rec.source_url, doc, rec, header, now_iso), encoding="utf-8")
     api.upload_file(path_or_fileobj=str(tmp_readme), path_in_repo="README.md", repo_id=repo_id, repo_type="dataset")
     tmp_readme.unlink(missing_ok=True)
     return repo_id

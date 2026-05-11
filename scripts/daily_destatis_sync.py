@@ -46,7 +46,8 @@ REPORT_PATH = META_DIR / "latest_sync_report.csv"
 RUNLOG_PATH = META_DIR / "runs.jsonl"
 
 HREF_RE = re.compile(r'href=["\']([^"\']+)["\']', re.IGNORECASE)
-ANCHOR_RE = re.compile(r'<a[^>]+href=["\']([^"\']+\.csv)["\'][^>]*>(.*?)</a>', re.IGNORECASE | re.DOTALL)
+ANCHOR_RE = re.compile(r'<a([^>]+)href=["\']([^"\']+\.csv)["\']([^>]*)>(.*?)</a>', re.IGNORECASE | re.DOTALL)
+TITLE_RE = re.compile(r'title=["\']([^"\']+)["\']', re.IGNORECASE | re.DOTALL)
 TAG_RE = re.compile(r"<[^>]+>")
 HEADING_RE = re.compile(r"<h[1-4][^>]*>(.*?)</h[1-4]>", re.IGNORECASE | re.DOTALL)
 MISSING_TOKENS = {"...", ".", "x", "-", "–", ""}
@@ -166,9 +167,12 @@ def extract_csv_docs(html: str, page_url: str) -> dict[str, CsvDoc]:
     docs: dict[str, CsvDoc] = {}
     matches = list(ANCHOR_RE.finditer(html))
     for i, m in enumerate(matches):
-        href, raw_label = m.group(1), m.group(2)
+        attrs = f"{m.group(1)} {m.group(3)}"
+        href, raw_label = m.group(2), m.group(4)
         csv_url = normalize_url(page_url, href)
         label = clean_text(raw_label)
+        title_match = TITLE_RE.search(attrs)
+        title_text = clean_text(title_match.group(1)) if title_match else ""
         # Prefer list-item context (clean prose), then nearest heading.
         context = ""
         li_start = html.rfind("<li", 0, m.start())
@@ -183,8 +187,11 @@ def extract_csv_docs(html: str, page_url: str) -> dict[str, CsvDoc]:
                 context = f"Section heading: {heading}"
         if len(context) > 360:
             context = context[:360].rstrip() + "..."
+        # Prefer official link title when available; it is usually more descriptive than short labels like "BV 4.1".
+        official_label = title_text or label
+        official_label = re.sub(r"^(External link\s*)?(CSV[- ]Datei:\s*)", "", official_label, flags=re.IGNORECASE).strip()
         docs[csv_url] = CsvDoc(
-            label=label or Path(urlparse(csv_url).path).stem.replace("_", " "),
+            label=official_label or Path(urlparse(csv_url).path).stem.replace("_", " "),
             context=context,
             page_url=page_url,
         )
@@ -402,7 +409,7 @@ def dataset_readme(
         lc = c.lower()
         if "datum" in lc or "date" in lc:
             field_notes.append(f"- `{c}`: time index / reporting period.")
-        elif "veraenderung" in lc or "veraenderung" in lc or "change" in lc:
+        elif any(x in lc for x in ["veraenderung", "veranderung", "vernderung", "gegenueber", "gegenuber", "change"]):
             field_notes.append(f"- `{c}`: period-over-period or year-over-year change metric.")
         elif "trend" in lc or "x13" in lc or "bv41" in lc:
             field_notes.append(f"- `{c}`: seasonally/calendar adjusted trend component.")

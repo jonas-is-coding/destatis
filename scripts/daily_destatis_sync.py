@@ -325,6 +325,12 @@ def upload_multi_repo(api: HfApi, rec: FileRecord, csv_path: Path) -> str:
     return repo_id
 
 
+def repo_belongs_to_namespace(repo_id: str, namespace: str) -> bool:
+    if not repo_id or "/" not in repo_id:
+        return False
+    return repo_id.split("/", 1)[0] == namespace
+
+
 def main() -> int:
     if not HF_TOKEN:
         raise SystemExit("HF_TOKEN missing")
@@ -366,7 +372,11 @@ def main() -> int:
         if prev and prev.get("sha256") == sha:
             # No source change, but in multi mode we may still need to publish
             # a per-file dataset repo for already processed ML-ready files.
-            if HF_PUBLISH_MODE == "multi" and prev.get("ml_ready") and not prev.get("hf_repo_id"):
+            if (
+                HF_PUBLISH_MODE == "multi"
+                and prev.get("ml_ready")
+                and not repo_belongs_to_namespace(str(prev.get("hf_repo_id", "")), HF_NAMESPACE)
+            ):
                 ml_path = ML_DIR / rel
                 if not ml_path.exists():
                     header, rows, meta = parse_ml_ready(raw.decode("utf-8", errors="replace"))

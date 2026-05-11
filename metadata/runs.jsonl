@@ -3,3 +3,4 @@
 {"timestamp_utc": "2026-05-11T10:54:33.530508+00:00", "found_links": 186, "new_or_changed": 0, "ml_ready_added_or_updated": 0, "hf_repo_id": "jonas-is-coding/destatis-open-data-ml-ready"}
 {"timestamp_utc": "2026-05-11T11:02:54.950596+00:00", "found_links": 186, "new_or_changed": 0, "ml_ready_added_or_updated": 0, "publish_mode": "multi", "single_repo_id": "", "multi_repo_namespace": "jonas-is-coding", "multi_repos_published": 0}
 {"timestamp_utc": "2026-05-11T11:06:08.024707+00:00", "found_links": 186, "new_or_changed": 0, "ml_ready_added_or_updated": 0, "publish_mode": "multi", "single_repo_id": "", "multi_repo_namespace": "jonas-is-coding", "multi_repos_published": 181, "multi_repos_backfilled": 181}
+{"timestamp_utc": "2026-05-11T11:22:10.921803+00:00", "found_links": 186, "new_or_changed": 0, "ml_ready_added_or_updated": 0, "publish_mode": "multi", "single_repo_id": "", "multi_repo_namespace": "destatis", "multi_repos_published": 0, "multi_repos_backfilled": 0}

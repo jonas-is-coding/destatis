@@ -8,7 +8,7 @@ import json
 import os
 import re
 from collections import Counter, deque
-from dataclasses import dataclass, asdict
+from dataclasses import asdict, dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
@@ -27,8 +27,11 @@ SEED_URLS = [
 MAX_PAGES = int(os.getenv("MAX_PAGES", "200"))
 MAX_CSV_FILES = int(os.getenv("MAX_CSV_FILES", "1000"))
 REQUEST_TIMEOUT = int(os.getenv("REQUEST_TIMEOUT", "45"))
-HF_REPO_ID = os.getenv("HF_REPO_ID", "jonas-is-coding/destatis-open-data-ml-ready")
 HF_TOKEN = os.getenv("HF_TOKEN")
+HF_NAMESPACE = os.getenv("HF_NAMESPACE", "jonas-is-coding")
+HF_PUBLISH_MODE = os.getenv("HF_PUBLISH_MODE", "multi")  # multi|single
+HF_REPO_ID = os.getenv("HF_REPO_ID", f"{HF_NAMESPACE}/destatis-open-data-ml-ready")
+HF_DATASET_PREFIX = os.getenv("HF_DATASET_PREFIX", "destatis-ml-")
 
 ROOT = Path(__file__).resolve().parents[1]
 RAW_DIR = ROOT / "data" / "raw"
@@ -55,6 +58,7 @@ class FileRecord:
     inconsistent_rows: int
     ml_ready: bool
     note: str
+    hf_repo_id: str
     last_seen_utc: str
 
 
@@ -64,6 +68,16 @@ def safe_path_from_url(url: str) -> str:
     if not s.endswith(".csv"):
         s += ".csv"
     return s
+
+
+def repo_slug_from_relpath(rel_path: str) -> str:
+    base = rel_path.lower().replace("/", "-")
+    base = re.sub(r"\.csv$", "", base)
+    base = re.sub(r"[^a-z0-9-]+", "-", base)
+    base = re.sub(r"-+", "-", base).strip("-")
+    if len(base) > 70:
+        base = base[:70].rstrip("-")
+    return f"{HF_DATASET_PREFIX}{base}"
 
 
 def is_internal(url: str) -> bool:
@@ -248,12 +262,6 @@ def write_manifest(manifest: dict) -> None:
     MANIFEST_PATH.write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
-def upload_to_hf(api: HfApi) -> None:
-    api.create_repo(repo_id=HF_REPO_ID, repo_type="dataset", exist_ok=True)
-    api.upload_folder(folder_path=str(ROOT / "data"), repo_id=HF_REPO_ID, repo_type="dataset", path_in_repo="data")
-    api.upload_folder(folder_path=str(ROOT / "metadata"), repo_id=HF_REPO_ID, repo_type="dataset", path_in_repo="metadata")
-
-
 def write_report(records: list[FileRecord]) -> None:
     META_DIR.mkdir(parents=True, exist_ok=True)
     if not records:
@@ -271,12 +279,58 @@ def write_runlog(payload: dict) -> None:
         f.write(json.dumps(payload, ensure_ascii=False) + "\n")
 
 
+def upload_single_repo(api: HfApi) -> None:
+    api.create_repo(repo_id=HF_REPO_ID, repo_type="dataset", exist_ok=True)
+    api.upload_folder(folder_path=str(ROOT / "data"), repo_id=HF_REPO_ID, repo_type="dataset", path_in_repo="data")
+    api.upload_folder(folder_path=str(ROOT / "metadata"), repo_id=HF_REPO_ID, repo_type="dataset", path_in_repo="metadata")
+
+
+def dataset_readme(title: str, source_url: str) -> str:
+    return f"""---
+license: other
+language:
+- de
+- en
+tags:
+- destatis
+- germany
+- open-data
+- ml-ready
+- tabular
+---
+
+# {title}
+
+## Inoffizieller Hinweis / Unofficial note
+Dieses Repository ist ein **privates Open-Source-Projekt** und **nicht offiziell** vom Statistischen Bundesamt (Destatis) betrieben.
+
+This repository is a **private open-source project** and is **not an official** repository of the Federal Statistical Office of Germany (Destatis).
+
+## Quelle / Source
+- {source_url}
+"""
+
+
+def upload_multi_repo(api: HfApi, rec: FileRecord, csv_path: Path) -> str:
+    repo_name = repo_slug_from_relpath(rec.rel_path)
+    repo_id = f"{HF_NAMESPACE}/{repo_name}"
+    api.create_repo(repo_id=repo_id, repo_type="dataset", exist_ok=True)
+    api.upload_file(path_or_fileobj=str(csv_path), path_in_repo="data.csv", repo_id=repo_id, repo_type="dataset")
+
+    tmp_readme = ROOT / "metadata" / ".tmp_readme.md"
+    tmp_readme.write_text(dataset_readme(repo_name, rec.source_url), encoding="utf-8")
+    api.upload_file(path_or_fileobj=str(tmp_readme), path_in_repo="README.md", repo_id=repo_id, repo_type="dataset")
+    tmp_readme.unlink(missing_ok=True)
+    return repo_id
+
+
 def main() -> int:
     if not HF_TOKEN:
         raise SystemExit("HF_TOKEN missing")
 
     RAW_DIR.mkdir(parents=True, exist_ok=True)
     ML_DIR.mkdir(parents=True, exist_ok=True)
+    META_DIR.mkdir(parents=True, exist_ok=True)
 
     session = requests.Session()
     api = HfApi(token=HF_TOKEN)
@@ -289,6 +343,7 @@ def main() -> int:
     updated_records: list[FileRecord] = []
     new_or_changed = 0
     kept_ml = 0
+    published_multi = 0
 
     for url in csv_links:
         try:
@@ -313,8 +368,8 @@ def main() -> int:
         header, rows, meta = parse_ml_ready(raw.decode("utf-8", errors="replace"))
         ml_ready = bool(meta.get("ml_ready", False))
 
-        ml_rel = rel
-        ml_path = ML_DIR / ml_rel
+        ml_path = ML_DIR / rel
+        hf_repo_id = ""
         if ml_ready and header and rows:
             ml_path.parent.mkdir(parents=True, exist_ok=True)
             with ml_path.open("w", encoding="utf-8", newline="") as f:
@@ -337,8 +392,15 @@ def main() -> int:
             inconsistent_rows=int(meta.get("inconsistent_rows", 0)),
             ml_ready=ml_ready,
             note=str(meta.get("note", "")),
+            hf_repo_id="",
             last_seen_utc=now,
         )
+
+        if ml_ready and HF_PUBLISH_MODE == "multi":
+            hf_repo_id = upload_multi_repo(api, rec, ml_path)
+            rec.hf_repo_id = hf_repo_id
+            published_multi += 1
+
         updated_records.append(rec)
         known[rel] = asdict(rec)
 
@@ -347,16 +409,20 @@ def main() -> int:
     write_manifest(manifest)
     write_report(updated_records)
 
+    if HF_PUBLISH_MODE == "single":
+        upload_single_repo(api)
+
     summary = {
         "timestamp_utc": now,
         "found_links": len(csv_links),
         "new_or_changed": new_or_changed,
         "ml_ready_added_or_updated": kept_ml,
-        "hf_repo_id": HF_REPO_ID,
+        "publish_mode": HF_PUBLISH_MODE,
+        "single_repo_id": HF_REPO_ID if HF_PUBLISH_MODE == "single" else "",
+        "multi_repo_namespace": HF_NAMESPACE if HF_PUBLISH_MODE == "multi" else "",
+        "multi_repos_published": published_multi,
     }
     write_runlog(summary)
-
-    upload_to_hf(api)
     print(json.dumps(summary, ensure_ascii=False))
     return 0
 

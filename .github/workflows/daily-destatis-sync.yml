@@ -2,7 +2,7 @@ name: Daily Destatis ML Sync
 
 on:
   schedule:
-    - cron: "0 6 * * *" # 06:00 UTC = 08:00 Europe/Berlin (Sommerzeit)
+    - cron: "0 6 * * *"
   workflow_dispatch:
 
 jobs:
@@ -27,6 +27,9 @@ jobs:
       - name: Run daily sync
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_NAMESPACE: jonas-is-coding
+          HF_PUBLISH_MODE: multi
+          HF_DATASET_PREFIX: destatis-ml-
         run: |
           python scripts/daily_destatis_sync.py
 
@@ -34,6 +37,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data metadata scripts .github/workflows requirements.txt || true
+          git add data metadata scripts .github/workflows requirements.txt README.md .gitignore || true
           git diff --cached --quiet || git commit -m "chore: daily destatis ml sync"
           git push

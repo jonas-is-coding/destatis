@@ -1,4 +1,4 @@
-datum,originalwert_2020100,originalwert_vernderung_gegenber_vorjahresmonat_in_,trendkonjunkturkomponente_bv_41_2020100,trendkonjunkturkomponente_bv_41_vernderung_gegenber_vormonat_in_,kalender_und_saisonbereinigte_werte_bv_41_2020100,kalender_und_saisonbereinigte_werte_bv_41_vernderung_gegenber_vormonat_in_,restkomponente_bv_41
+datum,originalwert_2020100,originalwert_veraenderung_gegenueber_vorjahresmonat_in_,trendkonjunkturkomponente_bv_41_2020100,trendkonjunkturkomponente_bv_41_veraenderung_gegenueber_vormonat_in_,kalender_und_saisonbereinigte_werte_bv_41_2020100,kalender_und_saisonbereinigte_werte_bv_41_veraenderung_gegenueber_vormonat_in_,restkomponente_bv_41
 01/03/1997,73.0,,73.1,0.1,73.1,0.1,0.0
 01/04/1997,72.9,,73.2,0.1,73.0,-0.1,-0.1
 01/05/1997,73.1,,73.2,0.1,73.1,0.2,-0.1
@@ -336,15 +336,16 @@ datum,originalwert_2020100,originalwert_vernderung_gegenber_vorjahresmonat_in_,t
 01/01/2025,120.3,2.3,120.7,0.2,120.8,0.0,0.0
 01/02/2025,120.8,2.3,121.0,0.2,121.0,0.2,0.1
 01/03/2025,121.2,2.2,121.2,0.2,121.2,0.1,-0.0
-01/04/2025,121.7,2.1,121.4,0.2,121.3,0.1,-0.1
+01/04/2025,121.7,2.1,121.4,0.2,121.3,0.2,-0.1
 01/05/2025,121.8,2.1,121.6,0.2,121.6,0.2,-0.1
 01/06/2025,121.8,2.0,121.8,0.2,121.7,0.1,-0.1
 01/07/2025,122.2,2.0,122.0,0.2,121.9,0.2,-0.1
-01/08/2025,122.3,2.2,122.3,0.2,122.2,0.2,-0.0
+01/08/2025,122.3,2.2,122.3,0.2,122.2,0.3,-0.0
 01/09/2025,122.6,2.4,122.5,0.2,122.6,0.3,0.1
 01/10/2025,123.0,2.3,122.7,0.2,122.8,0.2,0.1
-01/11/2025,122.7,2.3,122.9,0.1,123.0,0.2,0.2
+01/11/2025,122.7,2.3,122.9,0.2,123.0,0.2,0.1
 01/12/2025,122.7,1.8,123.0,0.1,122.9,-0.1,-0.1
 01/01/2026,122.8,2.1,123.2,0.1,123.2,0.3,0.0
 01/02/2026,123.1,1.9,123.4,0.1,123.3,0.1,-0.1
-01/03/2026,124.5,2.7,123.6,0.2,124.5,0.9,0.9
+01/03/2026,124.5,2.7,123.6,0.1,124.5,0.9,0.9
+01/04/2026,125.2,2.9,123.7,0.1,124.9,0.3,1.1

@@ -1,4 +1,4 @@
-datum,originalwert_messzahlen_2015100,originalwert_vernderung_gegenber_vorjahresmonat_in_,saison_und_kalenderbereinigte_werte_nach_x_13_jdemetra_messzahlen_2015100,saison_und_kalenderbereinigte_werte_nach_x_13_jdemetra_vernderung_gegenber_vorsmonat_in_
+datum,originalwert_messzahlen_2015100,originalwert_veraenderung_gegenueber_vorjahresmonat_in_,saison_und_kalenderbereinigte_werte_nach_x_13_jdemetra_messzahlen_2015100,saison_und_kalenderbereinigte_werte_nach_x_13_jdemetra_veraenderung_gegenueber_vorsmonat_in_
 01/03/1997,73.2,,75.2,0.3
 01/04/1997,80.7,,75.9,0.9
 01/05/1997,72.4,,75.6,-0.4
@@ -347,3 +347,4 @@ datum,originalwert_messzahlen_2015100,originalwert_vernderung_gegenber_vorjahres
 01/12/2025,138.5,4.4,143.1,2.4
 01/01/2026,131.9,-1.6,145.9,2.0
 01/02/2026,134.0,0.3,144.2,-1.2
+01/03/2026,159.6,8.4,146.9,1.9

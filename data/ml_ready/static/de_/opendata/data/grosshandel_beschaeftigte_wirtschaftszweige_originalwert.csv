@@ -1,4 +1,4 @@
-datumgrosshandel_mit_nahrungs,genussmitteln,getrnken_und_tabakwaren,messzahlen_2015100grosshandel_mit_gebrauchs_und_verbrauchsgtern,messzahlen_2015100grosshandel_mit_gerten_der_informations_und_kommunikationstechnik,messzahlen_2015100grosshandel_mit_sonstigen_maschinen,ausrstungen_und_zubehr
+datumgrosshandel_mit_nahrungs,genussmitteln,getraenken_und_tabakwaren,messzahlen_2015100grosshandel_mit_gebrauchs_und_verbrauchsguetern,messzahlen_2015100grosshandel_mit_geraeten_der_informations_und_kommunikationstechnik,messzahlen_2015100grosshandel_mit_sonstigen_maschinen,ausruestungen_und_zubehoer
 01/03/2005;110,3;103,5;91,8;82,7;93,2;96,4
 01/04/2005;110,1;103,2;91,5;82,1;92,5;96,7
 01/05/2005;111,5;103,1;91,4;82,5;92,3;96,3
@@ -249,5 +249,6 @@ datumgrosshandel_mit_nahrungs,genussmitteln,getrnken_und_tabakwaren,messzahlen_2
 01/10/2025;126,5;103,9;103,6;109,0;98,8;105,6
 01/11/2025;125,4;104,0;103,6;109,0;98,7;105,3
 01/12/2025;124,9;103,6;103,2;108,6;98,3;104,6
-01/01/2026;125,1;103,7;103,4;108,3;97,9;103,9
-01/02/2026;125,3;103,3;102,4;108,2;97,5;103,5
+01/01/2026;125,2;103,7;103,5;108,4;97,9;103,9
+01/02/2026;125,4;103,4;102,8;108,3;97,5;103,6
+01/03/2026;125,5;102,9;102,7;108,2;97,2;103,5

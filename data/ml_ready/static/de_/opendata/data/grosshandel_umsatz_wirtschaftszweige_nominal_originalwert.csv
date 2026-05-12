@@ -1,5 +1,5 @@
-umsatz_im_grohandel_nach_ausgewhlten_wirtschaftszweigen,nominal,col_3,col_4,col_5,col_6,col_7
-Datum;GrosshandelmitNahrungs-,Genuss�mitteln,Getr�nkenundTabak�waren,Messzahlen2015=100;GrosshandelmitGebrauchs-undVerbrauchs�g�tern,Messzahlen2015=100;GrosshandelmitGer�tenderInformations-undKommunikations�technik,Messzahlen2015=100;GrosshandelmitsonstigenMaschinen,Aus�r�stungenundZubeh�r
+umsatz_im_grosshandel_nach_ausgewaehlten_wirtschaftszweigen,nominal,col_3,col_4,col_5,col_6,col_7
+Datum;GrosshandelmitNahrungs-,Genuss­mitteln,GetränkenundTabak­waren,Messzahlen2015=100;GrosshandelmitGebrauchs-undVerbrauchs­gütern,Messzahlen2015=100;GrosshandelmitGerätenderInformations-undKommunikations­technik,Messzahlen2015=100;GrosshandelmitsonstigenMaschinen,Aus­rüstungenundZubehör
 01/03/2005;92,2;91,4;82,6;95,6;86,7;73,9
 01/04/2005;86,4;86,0;70,7;86,1;92,3;72,3
 01/05/2005;91,5;79,1;68,0;87,7;89,4;72,1
@@ -249,6 +249,7 @@ Datum;GrosshandelmitNahrungs-,Genuss�mitteln,Getr�nkenundTabak�waren,Messz
 01/09/2025;158,1;160,4;131,2;140,2;142,3;137,8
 01/10/2025;156,8;165,2;128,3;135,8;147,5;146,3
 01/11/2025;150,5;154,6;129,1;131,7;134,6;132,3
-01/12/2025;161,0;144,0;146,2;134,6;116,9;140,9
-01/01/2026;135,5;145,1;130,3;118,6;127,5;120,0
-01/02/2026;142,5;140,8;117,5;119,9;132,6;123,2
+01/12/2025;160,9;144,0;146,1;134,6;116,9;140,9
+01/01/2026;135,4;145,0;130,5;118,7;127,5;120,1
+01/02/2026;142,4;140,8;117,3;119,9;132,5;123,3
+01/03/2026;162,1;160,9;141,6;147,1;163,4;144,7

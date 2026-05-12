@@ -1,4 +1,4 @@
-datum,verbraucherpreisindex_2020100,index_der_einzelhandelspreise_2020100,index_der_erzeugerpreise_gewerblicher_produkte_2021100,index_der_grohandelsverkaufspreise_2021100,index_der_einfuhrpreise_2021100,index_der_ausfuhrpreise_2021100
+datum,verbraucherpreisindex_2020100,index_der_einzelhandelspreise_2020100,index_der_erzeugerpreise_gewerblicher_produkte_2021100,index_der_grosshandelsverkaufspreise_2021100,index_der_einfuhrpreise_2021100,index_der_ausfuhrpreise_2021100
 01/03/2012,91.7,94.2,90.6,93.3,100.7,93.4
 01/04/2012,91.6,94.3,90.8,93.7,100.4,93.7
 01/05/2012,91.5,94.1,90.5,93.2,100.0,93.6
@@ -168,3 +168,4 @@ datum,verbraucherpreisindex_2020100,index_der_einzelhandelspreise_2020100,index_
 01/01/2026,122.8,124.7,124.4,118.8,112.5,116.5
 01/02/2026,123.1,124.9,123.8,119.5,112.8,116.6
 01/03/2026,124.5,126.1,126.9,122.7,116.9,117.9
+01/04/2026,125.2,126.6,,,,

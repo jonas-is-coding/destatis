@@ -1,4 +1,4 @@
-datum,gebudebaumanahmen_anzahl,wohnungen_anzahl,wohnflche_1000_m,veranschlagte_kosten_des_bauwerks_1000_eur
+datum,gebaeudebaumassnahmen_anzahl,wohnungen_anzahl,wohnflaeche_1000_m2,veranschlagte_kosten_des_bauwerks_1000_eur
 01/03/2003,27791,27721,3443,6354329
 01/04/2003,25250,24889,3045,5634438
 01/05/2003,24138,23031,2797,6243105
@@ -275,3 +275,4 @@ datum,gebudebaumanahmen_anzahl,wohnungen_anzahl,wohnflche_1000_m,veranschlagte_k
 01/12/2025,12277,22934,2010,9713566
 01/01/2026,12330,19510,1821,8980227
 01/02/2026,12490,22220,1920,9315869
+01/03/2026,13410,21775,1994,9751006

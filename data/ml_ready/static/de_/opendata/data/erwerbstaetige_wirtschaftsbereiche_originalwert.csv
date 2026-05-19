@@ -1,4 +1,4 @@
-datum,land_und_forstwirtschaft_fischerei_durchschnitt_in_1000,produzierendes_gewerbe_ohne_baugewerbe_durchschnitt_in_1000,baugewerbe_durchschnitt_in_1000,handel_verkehr_und_gastgewerbe_durchschnitt_in_1000,unternehmensdienstleister_durchschnitt_in_1000,brige_dienstleistungsbereiche_durchschnitt_in_1000
+datum,land_und_forstwirtschaft_fischerei_durchschnitt_in_1000,produzierendes_gewerbe_ohne_baugewerbe_durchschnitt_in_1000,baugewerbe_durchschnitt_in_1000,handel_verkehr_und_gastgewerbe_durchschnitt_in_1000,unternehmensdienstleister_durchschnitt_in_1000,uebrige_dienstleistungsbereiche_durchschnitt_in_1000
 01/07/2000,782,8525,2918,9421,3903,14639
 01/10/2000,747,8542,2885,9434,3907,14791
 01/01/2001,718,8473,2664,9264,3835,14650
@@ -99,5 +99,6 @@ datum,land_und_forstwirtschaft_fischerei_durchschnitt_in_1000,produzierendes_gew
 01/10/2024,545,8047,2615,10117,6249,18621
 01/01/2025,534,7955,2568,9986,6160,18589
 01/04/2025,594,7922,2581,10075,6176,18647
-01/07/2025,578,7904,2588,10082,6183,18669
-01/10/2025,545,7887,2595,10082,6175,18852
+01/07/2025,577,7905,2589,10074,6187,18669
+01/10/2025,545,7890,2597,10064,6178,18847
+01/01/2026,530,7784,2541,9905,6088,18787

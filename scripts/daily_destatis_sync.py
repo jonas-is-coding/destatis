@@ -275,6 +275,56 @@ def normalize_cell(v: str) -> str:
     return t
 
 
+def reshape_to_long(header: list[str], rows: list[list[str]]) -> tuple[list[str], list[list[str]], dict]:
+    date_candidates = [
+        i
+        for i, col in enumerate(header)
+        if any(x in col.lower() for x in ["date", "datum", "monat", "jahr", "zeit", "period"])
+    ]
+    if not date_candidates:
+        return header, rows, {"reshaped": False, "reason": "no_date_column"}
+
+    date_idx = date_candidates[0]
+    numeric_indices: list[int] = []
+    for i, _col in enumerate(header):
+        if i == date_idx:
+            continue
+        values = [r[i] for r in rows if i < len(r) and r[i] != ""]
+        if not values:
+            continue
+        numeric_share = sum(1 for v in values if looks_numeric(v)) / len(values)
+        if numeric_share >= 0.7:
+            numeric_indices.append(i)
+
+    if not numeric_indices:
+        return header, rows, {"reshaped": False, "reason": "no_numeric_value_columns"}
+
+    long_header = ["date", "indicator", "value"]
+    long_rows: list[list[str]] = []
+    for row in rows:
+        date_value = row[date_idx] if date_idx < len(row) else ""
+        if date_value == "":
+            continue
+        for i in numeric_indices:
+            if i >= len(row):
+                continue
+            value = row[i]
+            if value == "":
+                continue
+            long_rows.append([date_value, header[i], value])
+
+    if not long_rows:
+        return header, rows, {"reshaped": False, "reason": "empty_after_reshape"}
+
+    return long_header, long_rows, {
+        "reshaped": True,
+        "reason": "wide_to_long",
+        "source_columns": len(header),
+        "numeric_columns": len(numeric_indices),
+        "long_rows": len(long_rows),
+    }
+
+
 def parse_ml_ready(raw_text: str) -> tuple[list[str], list[list[str]], dict]:
     lines = [ln for ln in raw_text.splitlines() if ln.strip()]
     if len(lines) < 2:
@@ -341,6 +391,16 @@ def parse_ml_ready(raw_text: str) -> tuple[list[str], list[list[str]], dict]:
         score -= 10
         notes.append("small")
 
+    long_header, long_rows, reshape_meta = reshape_to_long(header, normalized)
+    if reshape_meta["reshaped"]:
+        header = long_header
+        normalized = long_rows
+
+    if not reshape_meta["reshaped"]:
+        reshape_reason = reshape_meta.get("reason")
+        if reshape_reason:
+            notes.append(reshape_reason)
+
     ml_ready = score >= 60
     note = "; ".join(notes) if notes else "ok"
     return header, normalized, {
@@ -350,6 +410,10 @@ def parse_ml_ready(raw_text: str) -> tuple[list[str], list[list[str]], dict]:
         "missing_ratio": missing_ratio,
         "inconsistent_rows": inconsistent,
         "ml_ready": ml_ready,
+        "format": "long" if reshape_meta["reshaped"] else "original_normalized",
+        "long_format": reshape_meta["reshaped"],
+        "reshape_note": reshape_meta["reason"],
+        "quality_score": score,
         "note": note,
     }
 

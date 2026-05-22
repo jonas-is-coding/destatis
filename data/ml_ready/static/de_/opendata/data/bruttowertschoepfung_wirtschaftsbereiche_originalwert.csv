@@ -1,4 +1,4 @@
-bruttowertschpfung_nach_ausgewhlten_wirtschaftsbereichen,in_jeweiligen_preisen,col_3,col_4,col_5
+bruttowertschoepfung_nach_ausgewaehlten_wirtschaftsbereichen,in_jeweiligen_preisen,col_3,col_4,col_5
 Datum;Insgesamt,Mrd.EUR;ProduzierendesGewerbeohneBaugewerbe,Mrd.EUR;Baugewerbe,Mrd.EUR;Handel,GastgewerbeundVerkehr
 01/07/2000;484,16;120,73;25,48;77,86
 01/10/2000;495,18;125,38;26,48;80,19
@@ -98,7 +98,8 @@ Datum;Insgesamt,Mrd.EUR;ProduzierendesGewerbeohneBaugewerbe,Mrd.EUR;Baugewerbe,M
 01/04/2024;966,47;228,95;48,28;167,09
 01/07/2024;980,97;222,26;49,96;165,88
 01/10/2024;1003,34;232,83;54,46;167,57
-01/01/2025;991,91;230,70;41,26;159,29
-01/04/2025;992,53;229,02;49,13;171,27
-01/07/2025;1014,74;226,55;51,63;170,47
-01/10/2025;1045,64;238,40;57,88;172,29
+01/01/2025;992,16;230,98;41,27;158,98
+01/04/2025;992,80;229,45;49,16;171,05
+01/07/2025;1014,81;226,87;51,65;169,91
+01/10/2025;1044,48;239,41;56,89;171,42
+01/01/2026;1026,06;239,37;41,86;163,64

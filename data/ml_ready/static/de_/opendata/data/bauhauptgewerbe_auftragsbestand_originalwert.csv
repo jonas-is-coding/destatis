@@ -1,5 +1,5 @@
 volumenindex_des_auftragsbestands_im_bauhauptgewerbe,originalwert,col_3,col_4,col_5,col_6
-Datum;Insgesamt,2021=100;Wohnungsbau,2021=100;HochbauohneWohnungsbau,2021=100;Stra�enbau,2021=100;TiefbauohneStra�enbau,2021=100
+Datum;Insgesamt,2021=100;Wohnungsbau,2021=100;HochbauohneWohnungsbau,2021=100;Straßenbau,2021=100;TiefbauohneStraßenbau,2021=100
 01/07/2000;64,0;59,7;77,0;52,4;59,7
 01/10/2000;57,9;50,0;73,3;44,5;54,1
 01/01/2001;61,3;53,2;75,7;50,3;57,7
@@ -102,3 +102,4 @@ Datum;Insgesamt,2021=100;Wohnungsbau,2021=100;HochbauohneWohnungsbau,2021=100;St
 01/04/2025;108,3;70,1;97,9;92,7;150,1
 01/07/2025;111,0;72,7;102,7;90,4;153,5
 01/10/2025;107,1;73,2;99,5;81,9;148,3
+01/01/2026;113,0;77,3;102,2;90,5;157,0

@@ -12,7 +12,7 @@
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00",
       "hf_repo_id": "destatis/arbeitnehmer-im-inland-bv41"
     },
     "static/de_/opendata/data/arbeitnehmer_im_inland_x13.csv": {
@@ -28,7 +28,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/arbeitnehmer-im-inland-x13",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/arbeitnehmer_inlaender_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/arbeitnehmer_inlaender_bv41.csv",
@@ -42,53 +42,53 @@
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00",
       "hf_repo_id": "destatis/arbeitnehmer-inlaender-bv41"
     },
     "static/de_/opendata/data/arbeitskostenindex_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/arbeitskostenindex_bv41.csv",
       "rel_path": "static/de_/opendata/data/arbeitskostenindex_bv41.csv",
-      "sha256": "f29d0dbb05df393e724ef74734cff278b90228cdda7d9d9a842ef93576788fa6",
-      "bytes_size": 5783,
-      "rows": 118,
+      "sha256": "fc70fdc2b5e3b8846bbc794bc27c4551b55d4e393e86d73f96e0525ea8ba90bf",
+      "bytes_size": 5641,
+      "rows": 798,
       "columns": 8,
       "numeric_ratio": 0.875,
-      "missing_ratio": 0.00211864406779661,
+      "missing_ratio": 0.007608695652173913,
       "inconsistent_rows": 2,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
-      "hf_repo_id": "destatis/arbeitskostenindex-bv41"
+      "hf_repo_id": "destatis/arbeitskostenindex-bv41",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/arbeitskostenindex_originalwert.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/arbeitskostenindex_originalwert.csv",
       "rel_path": "static/de_/opendata/data/arbeitskostenindex_originalwert.csv",
-      "sha256": "0d373c50ed51b5066684b6aaca5f1a903b5a19136ed8ade8f5258f44c775677d",
-      "bytes_size": 2950,
-      "rows": 102,
+      "sha256": "a4282a6fc9b76d5539ddfd056c8a306d1806fa2399b1ab82516f908e33cb91b6",
+      "bytes_size": 2979,
+      "rows": 309,
       "columns": 4,
       "numeric_ratio": 0.75,
       "missing_ratio": 0.0,
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
-      "hf_repo_id": "destatis/arbeitskostenindex-originalwert"
+      "hf_repo_id": "destatis/arbeitskostenindex-originalwert",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/arbeitskostenindex_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/arbeitskostenindex_x13.csv",
       "rel_path": "static/de_/opendata/data/arbeitskostenindex_x13.csv",
-      "sha256": "4a881ba93b626e258c48a8fbf1785b0700837c2d9b05d47ff49f6066f17a8f4d",
-      "bytes_size": 5085,
-      "rows": 118,
+      "sha256": "57a074e5eb0b8ab963ca657af75b822d78a05ecc3137f99a46dc76a30ff36a2f",
+      "bytes_size": 4982,
+      "rows": 116,
       "columns": 7,
-      "numeric_ratio": 0.8571428571428571,
-      "missing_ratio": 0.004842615012106538,
+      "numeric_ratio": 0.14285714285714285,
+      "missing_ratio": 0.0,
       "inconsistent_rows": 1,
       "ml_ready": true,
-      "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
-      "hf_repo_id": "destatis/arbeitskostenindex-x13"
+      "note": "no_date_column",
+      "hf_repo_id": "destatis/arbeitskostenindex-x13",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/arbeitslose_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/arbeitslose_bv41.csv",
@@ -118,7 +118,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/arbeitslose-deutschland-originalwert",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/arbeitslose_frueheres_bundesgebiet_originalwert.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/arbeitslose_frueheres_bundesgebiet_originalwert.csv",
@@ -133,7 +133,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/arbeitslose-frueheres-bundesgebiet-originalwert",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/arbeitslose_neue_laender_originalwert.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/arbeitslose_neue_laender_originalwert.csv",
@@ -148,7 +148,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/arbeitslose-neue-laender-originalwert",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/arbeitslosenquote_deutschland_originalwert.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/arbeitslosenquote_deutschland_originalwert.csv",
@@ -163,7 +163,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/arbeitslosenquote-deutschland-originalwert",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/arbeitslosenquote_frueheres_bundesgebiet_originalwert.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/arbeitslosenquote_frueheres_bundesgebiet_originalwert.csv",
@@ -178,7 +178,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/arbeitslosenquote-frueheres-bundesgebiet-originalwert",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/arbeitslosenquote_neue_laender_originalwert.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/arbeitslosenquote_neue_laender_originalwert.csv",
@@ -193,7 +193,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/arbeitslosenquote-neue-laender-originalwert",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/auftragseingang_bauhauptgewerbe_hochbau_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/auftragseingang_bauhauptgewerbe_hochbau_bv41.csv",
@@ -208,7 +208,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/auftragseingang-bauhauptgewerbe-hochbau-bv41",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/auftragseingang_bauhauptgewerbe_hochbau_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/auftragseingang_bauhauptgewerbe_hochbau_x13.csv",
@@ -223,7 +223,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/auftragseingang-bauhauptgewerbe-hochbau-x13",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/auftragseingang_bauhauptgewerbe_insgesamt_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/auftragseingang_bauhauptgewerbe_insgesamt_bv41.csv",
@@ -238,7 +238,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/auftragseingang-bauhauptgewerbe-insgesamt-bv41",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/auftragseingang_bauhauptgewerbe_insgesamt_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/auftragseingang_bauhauptgewerbe_insgesamt_x13.csv",
@@ -253,7 +253,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/auftragseingang-bauhauptgewerbe-insgesamt-x13",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/auftragseingang_bauhauptgewerbe_tiefbau_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/auftragseingang_bauhauptgewerbe_tiefbau_bv41.csv",
@@ -268,7 +268,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/auftragseingang-bauhauptgewerbe-tiefbau-bv41",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/auftragseingang_bauhauptgewerbe_tiefbau_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/auftragseingang_bauhauptgewerbe_tiefbau_x13.csv",
@@ -283,7 +283,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/auftragseingang-bauhauptgewerbe-tiefbau-x13",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/auftragseingang_gebrauchsgueter_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/auftragseingang_gebrauchsgueter_bv41.csv",
@@ -298,7 +298,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/auftragseingang-gebrauchsgueter-bv41",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/auftragseingang_gebrauchsgueter_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/auftragseingang_gebrauchsgueter_x13.csv",
@@ -313,7 +313,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/auftragseingang-gebrauchsgueter-x13",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/auftragseingang_investitionsgueter_ausland_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/auftragseingang_investitionsgueter_ausland_bv41.csv",
@@ -328,7 +328,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/auftragseingang-investitionsgueter-ausland-bv41",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/auftragseingang_investitionsgueter_ausland_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/auftragseingang_investitionsgueter_ausland_x13.csv",
@@ -343,7 +343,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/auftragseingang-investitionsgueter-ausland-x13",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/auftragseingang_investitionsgueter_inland_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/auftragseingang_investitionsgueter_inland_bv41.csv",
@@ -358,7 +358,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/auftragseingang-investitionsgueter-inland-bv41",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/auftragseingang_investitionsgueter_inland_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/auftragseingang_investitionsgueter_inland_x13.csv",
@@ -373,7 +373,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/auftragseingang-investitionsgueter-inland-x13",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/auftragseingang_investitionsgueter_insgesamt_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/auftragseingang_investitionsgueter_insgesamt_bv41.csv",
@@ -388,7 +388,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/auftragseingang-investitionsgueter-insgesamt-bv41",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/auftragseingang_investitionsgueter_insgesamt_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/auftragseingang_investitionsgueter_insgesamt_x13.csv",
@@ -403,7 +403,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/auftragseingang-investitionsgueter-insgesamt-x13",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/auftragseingang_verarbeitendes_gewerbe_ausland_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/auftragseingang_verarbeitendes_gewerbe_ausland_bv41.csv",
@@ -418,7 +418,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/auftragseingang-verarbeitendes-gewerbe-ausland-bv41",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/auftragseingang_verarbeitendes_gewerbe_ausland_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/auftragseingang_verarbeitendes_gewerbe_ausland_x13.csv",
@@ -433,7 +433,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/auftragseingang-verarbeitendes-gewerbe-ausland-x13",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/auftragseingang_verarbeitendes_gewerbe_inland_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/auftragseingang_verarbeitendes_gewerbe_inland_bv41.csv",
@@ -448,7 +448,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/auftragseingang-verarbeitendes-gewerbe-inland-bv41",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/auftragseingang_verarbeitendes_gewerbe_inland_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/auftragseingang_verarbeitendes_gewerbe_inland_x13.csv",
@@ -463,7 +463,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/auftragseingang-verarbeitendes-gewerbe-inland-x13",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/auftragseingang_verarbeitendes_gewerbe_insgesamt_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/auftragseingang_verarbeitendes_gewerbe_insgesamt_bv41.csv",
@@ -478,7 +478,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/auftragseingang-verarbeitendes-gewerbe-insgesamt-bv41",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/auftragseingang_verarbeitendes_gewerbe_insgesamt_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/auftragseingang_verarbeitendes_gewerbe_insgesamt_x13.csv",
@@ -493,7 +493,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/auftragseingang-verarbeitendes-gewerbe-insgesamt-x13",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/auftragseingang_verbrauchsgueter_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/auftragseingang_verbrauchsgueter_bv41.csv",
@@ -508,7 +508,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/auftragseingang-verbrauchsgueter-bv41",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/auftragseingang_verbrauchsgueter_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/auftragseingang_verbrauchsgueter_x13.csv",
@@ -523,7 +523,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/auftragseingang-verbrauchsgueter-x13",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/auftragseingang_vorleistungsgueter_ausland_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/auftragseingang_vorleistungsgueter_ausland_bv41.csv",
@@ -538,7 +538,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/auftragseingang-vorleistungsgueter-ausland-bv41",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/auftragseingang_vorleistungsgueter_ausland_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/auftragseingang_vorleistungsgueter_ausland_x13.csv",
@@ -553,7 +553,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/auftragseingang-vorleistungsgueter-ausland-x13",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/auftragseingang_vorleistungsgueter_inland_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/auftragseingang_vorleistungsgueter_inland_bv41.csv",
@@ -568,7 +568,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/auftragseingang-vorleistungsgueter-inland-bv41",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/auftragseingang_vorleistungsgueter_inland_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/auftragseingang_vorleistungsgueter_inland_x13.csv",
@@ -583,7 +583,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/auftragseingang-vorleistungsgueter-inland-x13",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/auftragseingang_vorleistungsgueter_insgesamt_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/auftragseingang_vorleistungsgueter_insgesamt_bv41.csv",
@@ -598,7 +598,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/auftragseingang-vorleistungsgueter-insgesamt-bv41",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/auftragseingang_vorleistungsgueter_insgesamt_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/auftragseingang_vorleistungsgueter_insgesamt_x13.csv",
@@ -613,7 +613,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/auftragseingang-vorleistungsgueter-insgesamt-x13",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/auftragseingangsindex_verarbeitendes_gewerbe_originalwert.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/auftragseingangsindex_verarbeitendes_gewerbe_originalwert.csv",
@@ -628,7 +628,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/auftragseingangsindex-verarbeitendes-gewerbe-originalwert",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/ausbaugewerbe_beschaeftigte_umsatz_originalwert.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/ausbaugewerbe_beschaeftigte_umsatz_originalwert.csv",
@@ -642,7 +642,7 @@
       "inconsistent_rows": 2,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00",
       "hf_repo_id": "destatis/ausbaugewerbe-beschaeftigte-umsatz-originalwert"
     },
     "static/de_/opendata/data/ausfuhrpreisindex_bv41.csv": {
@@ -657,7 +657,7 @@
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00",
       "hf_repo_id": "destatis/ausfuhrpreisindex-bv41"
     },
     "static/de_/opendata/data/ausruestungsinvestitionen_preisbereinigt_bv41.csv": {
@@ -672,7 +672,7 @@
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00",
       "hf_repo_id": "destatis/ausruestungsinvestitionen-preisbereinigt-bv41"
     },
     "static/de_/opendata/data/ausruestungsinvestitionen_preisbereinigt_x13.csv": {
@@ -688,7 +688,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/ausruestungsinvestitionen-preisbereinigt-x13",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/aussenhandel_indizes_termsoftrade_originalwert.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/aussenhandel_indizes_termsoftrade_originalwert.csv",
@@ -703,7 +703,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/aussenhandel-indizes-termsoftrade-originalwert",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/baugenehmigungen_insgesamt_originalwert.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/baugenehmigungen_insgesamt_originalwert.csv",
@@ -718,7 +718,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/baugenehmigungen-insgesamt-originalwert",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/baugenehmigungen_neue_gebaeude_originalwert.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/baugenehmigungen_neue_gebaeude_originalwert.csv",
@@ -733,7 +733,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/baugenehmigungen-neue-gebaeude-originalwert",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/bauhauptgewerbe_absolute_ergebnisse.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/bauhauptgewerbe_absolute_ergebnisse.csv",
@@ -748,7 +748,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/bauhauptgewerbe-absolute-ergebnisse",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/bauhauptgewerbe_auftragsbestand_originalwert.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/bauhauptgewerbe_auftragsbestand_originalwert.csv",
@@ -763,7 +763,7 @@
       "ml_ready": true,
       "note": "no_date_column",
       "hf_repo_id": "destatis/bauhauptgewerbe-auftragsbestand-originalwert",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/bauhauptgewerbe_auftragseingang_originalwert.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/bauhauptgewerbe_auftragseingang_originalwert.csv",
@@ -778,7 +778,7 @@
       "ml_ready": true,
       "note": "no_date_column",
       "hf_repo_id": "destatis/bauhauptgewerbe-auftragseingang-originalwert",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/bauhauptgewerbe_beschaeftigte_umsatz_messzahlen.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/bauhauptgewerbe_beschaeftigte_umsatz_messzahlen.csv",
@@ -792,7 +792,7 @@
       "inconsistent_rows": 2,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00",
       "hf_repo_id": "destatis/bauhauptgewerbe-beschaeftigte-umsatz-messzahlen"
     },
     "static/de_/opendata/data/bauinvestitionen_preisbereinigt_bv41.csv": {
@@ -807,7 +807,7 @@
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00",
       "hf_repo_id": "destatis/bauinvestitionen-preisbereinigt-bv41"
     },
     "static/de_/opendata/data/bauinvestitionen_preisbereinigt_x13.csv": {
@@ -823,7 +823,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/bauinvestitionen-preisbereinigt-x13",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/baupreisindizes_ingenieurbau_instandhaltung_originalwert.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/baupreisindizes_ingenieurbau_instandhaltung_originalwert.csv",
@@ -837,7 +837,7 @@
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00",
       "hf_repo_id": "destatis/baupreisindizes-ingenieurbau-instandhaltung-originalwert"
     },
     "static/de_/opendata/data/baupreisindizes_wohngebaeude_nichtwohngebaeude_originalwert.csv": {
@@ -852,7 +852,7 @@
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00",
       "hf_repo_id": "destatis/baupreisindizes-wohngebaeude-nichtwohngebaeude-originalwert"
     },
     "static/de_/opendata/data/beschaeftigte_ausgew_dienstleistungsbereiche.csv": {
@@ -868,7 +868,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/beschaeftigte-ausgew-dienstleistungsbereiche",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/bruttoanlageinvestitionen_originalwert.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/bruttoanlageinvestitionen_originalwert.csv",
@@ -883,7 +883,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/bruttoanlageinvestitionen-originalwert",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/bruttoanlageinvestitionen_preisbereinigt_originalwert.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/bruttoanlageinvestitionen_preisbereinigt_originalwert.csv",
@@ -898,7 +898,7 @@
       "ml_ready": true,
       "note": "no_date_column",
       "hf_repo_id": "destatis/bruttoanlageinvestitionen-preisbereinigt-originalwert",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/bruttoinlandsprodukt_bruttowertschoepfung_originalwert.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/bruttoinlandsprodukt_bruttowertschoepfung_originalwert.csv",
@@ -913,7 +913,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/bruttoinlandsprodukt-bruttowertschoepfung-originalwert",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/bruttoinlandsprodukt_originalwert.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/bruttoinlandsprodukt_originalwert.csv",
@@ -928,7 +928,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/bruttoinlandsprodukt-originalwert",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/bruttoinlandsprodukt_preisbereinigt_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/bruttoinlandsprodukt_preisbereinigt_bv41.csv",
@@ -942,7 +942,7 @@
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00",
       "hf_repo_id": "destatis/bruttoinlandsprodukt-preisbereinigt-bv41"
     },
     "static/de_/opendata/data/bruttoinlandsprodukt_preisbereinigt_x13.csv": {
@@ -958,7 +958,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/bruttoinlandsprodukt-preisbereinigt-x13",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/bruttonationaleinkommen_originalwert.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/bruttonationaleinkommen_originalwert.csv",
@@ -973,7 +973,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/bruttonationaleinkommen-originalwert",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/bruttowertschoepfung_preisbereinigt_baugewerbe_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/bruttowertschoepfung_preisbereinigt_baugewerbe_bv41.csv",
@@ -987,7 +987,7 @@
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00",
       "hf_repo_id": "destatis/bruttowertschoepfung-preisbereinigt-baugewerbe-bv41"
     },
     "static/de_/opendata/data/bruttowertschoepfung_preisbereinigt_baugewerbe_x13.csv": {
@@ -1003,7 +1003,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/bruttowertschoepfung-preisbereinigt-baugewerbe-x13",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/bruttowertschoepfung_preisbereinigt_handel_gastgewerbe_verkehr_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/bruttowertschoepfung_preisbereinigt_handel_gastgewerbe_verkehr_bv41.csv",
@@ -1017,7 +1017,7 @@
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00",
       "hf_repo_id": "destatis/bruttowertschoepfung-preisbereinigt-handel-gastgewerbe-verkehr-bv41"
     },
     "static/de_/opendata/data/bruttowertschoepfung_preisbereinigt_handel_gastgewerbe_verkehr_x13.csv": {
@@ -1033,7 +1033,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/bruttowertschoepfung-preisbereinigt-handel-gastgewerbe-verkehr-x13",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/bruttowertschoepfung_preisbereinigt_produzierendes_gewerbe_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/bruttowertschoepfung_preisbereinigt_produzierendes_gewerbe_bv41.csv",
@@ -1047,7 +1047,7 @@
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00",
       "hf_repo_id": "destatis/bruttowertschoepfung-preisbereinigt-produzierendes-gewerbe-bv41"
     },
     "static/de_/opendata/data/bruttowertschoepfung_preisbereinigt_produzierendes_gewerbe_x13.csv": {
@@ -1063,7 +1063,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/bruttowertschoepfung-preisbereinigt-produzierendes-gewerbe-x13",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/bruttowertschoepfung_wirtschaftsbereiche_originalwert.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/bruttowertschoepfung_wirtschaftsbereiche_originalwert.csv",
@@ -1078,7 +1078,7 @@
       "ml_ready": true,
       "note": "no_date_column",
       "hf_repo_id": "destatis/bruttowertschoepfung-wirtschaftsbereiche-originalwert",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/bruttowertschoepfung_wirtschaftsbereiche_preisbereinigt_originalwert.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/bruttowertschoepfung_wirtschaftsbereiche_preisbereinigt_originalwert.csv",
@@ -1093,7 +1093,7 @@
       "ml_ready": true,
       "note": "no_date_column",
       "hf_repo_id": "destatis/bruttowertschoepfung-wirtschaftsbereiche-preisbereinigt-originalwert",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/einfuhrpreisindex_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/einfuhrpreisindex_bv41.csv",
@@ -1107,7 +1107,7 @@
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00",
       "hf_repo_id": "destatis/einfuhrpreisindex-bv41"
     },
     "static/de_/opendata/data/einzelhandel_beschaeftigte_insgesamt_originalwert.csv": {
@@ -1123,7 +1123,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/einzelhandel-beschaeftigte-insgesamt-originalwert",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/einzelhandel_beschaeftigte_wirtschaftszweige_originalwert.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/einzelhandel_beschaeftigte_wirtschaftszweige_originalwert.csv",
@@ -1138,7 +1138,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/einzelhandel-beschaeftigte-wirtschaftszweige-originalwert",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/einzelhandel_umsatz_wirtschaftszweige_nominal_originalwert.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/einzelhandel_umsatz_wirtschaftszweige_nominal_originalwert.csv",
@@ -1153,7 +1153,7 @@
       "ml_ready": true,
       "note": "no_date_column",
       "hf_repo_id": "destatis/einzelhandel-umsatz-wirtschaftszweige-nominal-originalwert",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/einzelhandel_umsatz_wirtschaftszweige_preisbereinigt_originalwert.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/einzelhandel_umsatz_wirtschaftszweige_preisbereinigt_originalwert.csv",
@@ -1168,7 +1168,7 @@
       "ml_ready": true,
       "note": "no_date_column",
       "hf_repo_id": "destatis/einzelhandel-umsatz-wirtschaftszweige-preisbereinigt-originalwert",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/einzelhandelsumsatz_nominal_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/einzelhandelsumsatz_nominal_bv41.csv",
@@ -1182,7 +1182,7 @@
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00",
       "hf_repo_id": "destatis/einzelhandelsumsatz-nominal-bv41"
     },
     "static/de_/opendata/data/einzelhandelsumsatz_nominal_x13.csv": {
@@ -1197,7 +1197,7 @@
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00",
       "hf_repo_id": "destatis/einzelhandelsumsatz-nominal-x13"
     },
     "static/de_/opendata/data/einzelhandelsumsatz_real_bv41.csv": {
@@ -1212,7 +1212,7 @@
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00",
       "hf_repo_id": "destatis/einzelhandelsumsatz-real-bv41"
     },
     "static/de_/opendata/data/einzelhandelsumsatz_real_x13.csv": {
@@ -1227,7 +1227,7 @@
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00",
       "hf_repo_id": "destatis/einzelhandelsumsatz-real-x13"
     },
     "static/de_/opendata/data/erwerbstaetige_im_inland_monat_x13.csv": {
@@ -1243,7 +1243,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/erwerbstaetige-im-inland-monat-x13",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/erwerbstaetige_im_inland_quartal_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/erwerbstaetige_im_inland_quartal_x13.csv",
@@ -1258,7 +1258,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/erwerbstaetige-im-inland-quartal-x13",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/erwerbstaetige_inlaender_monat_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/erwerbstaetige_inlaender_monat_x13.csv",
@@ -1273,7 +1273,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/erwerbstaetige-inlaender-monat-x13",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/erwerbstaetige_inlaender_quartal_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/erwerbstaetige_inlaender_quartal_x13.csv",
@@ -1288,7 +1288,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/erwerbstaetige-inlaender-quartal-x13",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/erwerbstaetige_originalwert.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/erwerbstaetige_originalwert.csv",
@@ -1303,7 +1303,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/erwerbstaetige-originalwert",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/erwerbstaetige_wirtschaftsbereiche_originalwert.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/erwerbstaetige_wirtschaftsbereiche_originalwert.csv",
@@ -1318,7 +1318,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/erwerbstaetige-wirtschaftsbereiche-originalwert",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/erzeugerpreise_gewerblicher_produkte_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/erzeugerpreise_gewerblicher_produkte_bv41.csv",
@@ -1333,7 +1333,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/erzeugerpreise-gewerblicher-produkte-bv41",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/exporte_originalwert.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/exporte_originalwert.csv",
@@ -1348,7 +1348,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/exporte-originalwert",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/exporte_waren_preisbereinigt_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/exporte_waren_preisbereinigt_bv41.csv",
@@ -1362,7 +1362,7 @@
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00",
       "hf_repo_id": "destatis/exporte-waren-preisbereinigt-bv41"
     },
     "static/de_/opendata/data/exporte_waren_preisbereinigt_x13.csv": {
@@ -1378,7 +1378,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/exporte-waren-preisbereinigt-x13",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/gastgewerbe_beschaeftigte_umsatz_insgesamt_originalwert.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/gastgewerbe_beschaeftigte_umsatz_insgesamt_originalwert.csv",
@@ -1393,7 +1393,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/gastgewerbe-beschaeftigte-umsatz-insgesamt-originalwert",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/gastgewerbe_beschaeftigte_wirtschaftszweige_originalwert.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/gastgewerbe_beschaeftigte_wirtschaftszweige_originalwert.csv",
@@ -1408,7 +1408,7 @@
       "ml_ready": true,
       "note": "no_date_column",
       "hf_repo_id": "destatis/gastgewerbe-beschaeftigte-wirtschaftszweige-originalwert",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/gastgewerbe_umsatz_nominal_wirtschaftszweige_originalwert.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/gastgewerbe_umsatz_nominal_wirtschaftszweige_originalwert.csv",
@@ -1423,7 +1423,7 @@
       "ml_ready": true,
       "note": "no_date_column",
       "hf_repo_id": "destatis/gastgewerbe-umsatz-nominal-wirtschaftszweige-originalwert",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/gastgewerbe_umsatz_real_wirtschaftszweige_originalwert.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/gastgewerbe_umsatz_real_wirtschaftszweige_originalwert.csv",
@@ -1438,7 +1438,7 @@
       "ml_ready": true,
       "note": "no_date_column",
       "hf_repo_id": "destatis/gastgewerbe-umsatz-real-wirtschaftszweige-originalwert",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/gastgewerbeumsatz_nominal_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/gastgewerbeumsatz_nominal_bv41.csv",
@@ -1453,7 +1453,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/gastgewerbeumsatz-nominal-bv41",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/gastgewerbeumsatz_nominal_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/gastgewerbeumsatz_nominal_x13.csv",
@@ -1468,7 +1468,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/gastgewerbeumsatz-nominal-x13",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/gastgewerbeumsatz_real_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/gastgewerbeumsatz_real_bv41.csv",
@@ -1483,7 +1483,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/gastgewerbeumsatz-real-bv41",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/gastgewerbeumsatz_real_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/gastgewerbeumsatz_real_x13.csv",
@@ -1498,7 +1498,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/gastgewerbeumsatz-real-x13",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/gemeldete_stellen_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/gemeldete_stellen_bv41.csv",
@@ -1513,12 +1513,12 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/gemeldete-stellen-bv41",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/grosshandel_beschaeftigte_insgesamt_originalwert.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/grosshandel_beschaeftigte_insgesamt_originalwert.csv",
       "rel_path": "static/de_/opendata/data/grosshandel_beschaeftigte_insgesamt_originalwert.csv",
-      "sha256": "da566d8b04fc19ba0ea3f393f67b859d1b9e2853f91484afb497a1297562f217",
+      "sha256": "30ce1f98dd81a5f118e2d7c1af6e4ce828ca329ff34801f31decd0dad104386a",
       "bytes_size": 4283,
       "rows": 253,
       "columns": 2,
@@ -1528,12 +1528,12 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/grosshandel-beschaeftigte-insgesamt-originalwert",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/grosshandel_beschaeftigte_wirtschaftszweige_originalwert.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/grosshandel_beschaeftigte_wirtschaftszweige_originalwert.csv",
       "rel_path": "static/de_/opendata/data/grosshandel_beschaeftigte_wirtschaftszweige_originalwert.csv",
-      "sha256": "bc0f8e9937eec844966cb848727cf9ea10d4516ff11db2ea6d24749788d82e0a",
+      "sha256": "1ef446b8c40da6f46cd22535b5624be5ee77b8eb9de835b4ab6d7f458388ff53",
       "bytes_size": 11744,
       "rows": 253,
       "columns": 7,
@@ -1543,12 +1543,12 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/grosshandel-beschaeftigte-wirtschaftszweige-originalwert",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/grosshandel_umsatz_wirtschaftszweige_nominal_originalwert.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/grosshandel_umsatz_wirtschaftszweige_nominal_originalwert.csv",
       "rel_path": "static/de_/opendata/data/grosshandel_umsatz_wirtschaftszweige_nominal_originalwert.csv",
-      "sha256": "5f85f3220e30403558f09709559f68f926567a5c30053b23e2c8c133be36c9ff",
+      "sha256": "6d5300b93e9ff11ead7312e42437849886b8c17894c082abad0345b47fa9b5b5",
       "bytes_size": 11766,
       "rows": 254,
       "columns": 7,
@@ -1556,14 +1556,14 @@
       "missing_ratio": 0.0,
       "inconsistent_rows": 2,
       "ml_ready": true,
-      "note": "ok",
+      "note": "no_date_column",
       "hf_repo_id": "destatis/grosshandel-umsatz-wirtschaftszweige-nominal-originalwert",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/grosshandel_umsatz_wirtschaftszweige_preisbereinigt_originalwert.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/grosshandel_umsatz_wirtschaftszweige_preisbereinigt_originalwert.csv",
       "rel_path": "static/de_/opendata/data/grosshandel_umsatz_wirtschaftszweige_preisbereinigt_originalwert.csv",
-      "sha256": "a017ddd2ec7b0428e9bfa81d4a574179afd4529718fd455fa1e2201141000b53",
+      "sha256": "f5428c298b44cb7a6eb326a126933361c533492196f003548dd1734be2013884",
       "bytes_size": 11806,
       "rows": 254,
       "columns": 7,
@@ -1571,16 +1571,16 @@
       "missing_ratio": 0.0,
       "inconsistent_rows": 2,
       "ml_ready": true,
-      "note": "ok",
+      "note": "no_date_column",
       "hf_repo_id": "destatis/grosshandel-umsatz-wirtschaftszweige-preisbereinigt-originalwert",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/grosshandelsumsatz_nominal_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/grosshandelsumsatz_nominal_bv41.csv",
       "rel_path": "static/de_/opendata/data/grosshandelsumsatz_nominal_bv41.csv",
-      "sha256": "34da8fa841433f2377cfd5668871f2641c86740d066b7f04cf82d3c9d892d571",
+      "sha256": "e9f920fd672dee92af38bc148ade2f4b9f3bb8806e004a8b3b1a03077cd908eb",
       "bytes_size": 16230,
-      "rows": 349,
+      "rows": 2433,
       "columns": 8,
       "numeric_ratio": 0.875,
       "missing_ratio": 0.0035816618911174787,
@@ -1588,14 +1588,14 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/grosshandelsumsatz-nominal-bv41",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/grosshandelsumsatz_nominal_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/grosshandelsumsatz_nominal_x13.csv",
       "rel_path": "static/de_/opendata/data/grosshandelsumsatz_nominal_x13.csv",
-      "sha256": "215145f0e21489b5f43f35d620c508976e0f6b9b0a27afbf28ee90b676829451",
+      "sha256": "7fdf896932ab3c49dfd5bb5829fc8ee30936ff3a40fc2988eae8def0288e028d",
       "bytes_size": 11075,
-      "rows": 349,
+      "rows": 1386,
       "columns": 5,
       "numeric_ratio": 0.8,
       "missing_ratio": 0.0057306590257879654,
@@ -1603,14 +1603,14 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/grosshandelsumsatz-nominal-x13",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/grosshandelsumsatz_real_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/grosshandelsumsatz_real_bv41.csv",
       "rel_path": "static/de_/opendata/data/grosshandelsumsatz_real_bv41.csv",
-      "sha256": "3c92d02d82788d18323f9983a9273ebefbeff1ee0442236c1c5312a873ce61cb",
-      "bytes_size": 16244,
-      "rows": 349,
+      "sha256": "1b99fbc8163845d39983b503d41ff34ccc35dbd024fa4c44ea025395e24f333d",
+      "bytes_size": 16242,
+      "rows": 2433,
       "columns": 8,
       "numeric_ratio": 0.875,
       "missing_ratio": 0.0035816618911174787,
@@ -1618,14 +1618,14 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/grosshandelsumsatz-real-bv41",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/grosshandelsumsatz_real_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/grosshandelsumsatz_real_x13.csv",
       "rel_path": "static/de_/opendata/data/grosshandelsumsatz_real_x13.csv",
-      "sha256": "9120288411e6aa18be95f4f53232b9dfb1a8f18dffba8b9939858805eff10814",
+      "sha256": "9d015fa73e9ccb5deda480dc61ca3c96feae9deb8b0c0786b361eafe12996970",
       "bytes_size": 11094,
-      "rows": 349,
+      "rows": 1386,
       "columns": 5,
       "numeric_ratio": 0.8,
       "missing_ratio": 0.0057306590257879654,
@@ -1633,7 +1633,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/grosshandelsumsatz-real-x13",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/grosshandelsverkaufspreise_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/grosshandelsverkaufspreise_bv41.csv",
@@ -1648,7 +1648,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/grosshandelsverkaufspreise-bv41",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/ilo_arbeitsmarktstatistik_erwerbslosenquoten_bevoelkerungsgruppen_originalwert.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/ilo_arbeitsmarktstatistik_erwerbslosenquoten_bevoelkerungsgruppen_originalwert.csv",
@@ -1663,7 +1663,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/ilo-arbeitsmarktstatistik-erwerbslosenquoten-bevoelkerungsgruppen-orig",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/ilo_arbeitsmarktstatistik_erwerbslosenquoten_geschlecht_originalwert.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/ilo_arbeitsmarktstatistik_erwerbslosenquoten_geschlecht_originalwert.csv",
@@ -1678,7 +1678,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/ilo-arbeitsmarktstatistik-erwerbslosenquoten-geschlecht-originalwert",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/ilo_arbeitsmarktstatistik_erwerbstaetige_erwerbslose_bereinigt.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/ilo_arbeitsmarktstatistik_erwerbstaetige_erwerbslose_bereinigt.csv",
@@ -1693,7 +1693,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/ilo-arbeitsmarktstatistik-erwerbstaetige-erwerbslose-bereinigt",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/ilo_arbeitsmarktstatistik_uebersicht_originalwert.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/ilo_arbeitsmarktstatistik_uebersicht_originalwert.csv",
@@ -1708,7 +1708,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/ilo-arbeitsmarktstatistik-uebersicht-originalwert",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/importe_originalwert.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/importe_originalwert.csv",
@@ -1723,7 +1723,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/importe-originalwert",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/importe_waren_preisbereinigt_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/importe_waren_preisbereinigt_bv41.csv",
@@ -1737,7 +1737,7 @@
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00",
       "hf_repo_id": "destatis/importe-waren-preisbereinigt-bv41"
     },
     "static/de_/opendata/data/importe_waren_preisbereinigt_x13.csv": {
@@ -1753,67 +1753,67 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/importe-waren-preisbereinigt-x13",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/index_bruttoverdienste_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/index_bruttoverdienste_bv41.csv",
       "rel_path": "static/de_/opendata/data/index_bruttoverdienste_bv41.csv",
-      "sha256": "7531e23b62a4bdb14e9775c8c473ba0c4b38e203ea67aa4f781c72b9cf479f18",
-      "bytes_size": 5782,
-      "rows": 118,
+      "sha256": "18f79c97f4e48f2c6af932260e5dbf2fd4de2d737b8ed4cca096f56ed4c2b6bc",
+      "bytes_size": 5639,
+      "rows": 798,
       "columns": 8,
       "numeric_ratio": 0.875,
-      "missing_ratio": 0.00211864406779661,
+      "missing_ratio": 0.007608695652173913,
       "inconsistent_rows": 2,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
-      "hf_repo_id": "destatis/index-bruttoverdienste-bv41"
+      "hf_repo_id": "destatis/index-bruttoverdienste-bv41",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/index_bruttoverdienste_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/index_bruttoverdienste_x13.csv",
       "rel_path": "static/de_/opendata/data/index_bruttoverdienste_x13.csv",
-      "sha256": "48dfaea0ff13818eaba9bec56080eb43d118d78b022e352039252da33c78b7be",
-      "bytes_size": 5085,
-      "rows": 118,
+      "sha256": "ab4d0bdc0025e21ef17da6f0895a5861c869c03da28d8538e3f5f41238454c2d",
+      "bytes_size": 4981,
+      "rows": 116,
       "columns": 7,
-      "numeric_ratio": 0.8571428571428571,
-      "missing_ratio": 0.004842615012106538,
+      "numeric_ratio": 0.14285714285714285,
+      "missing_ratio": 0.0,
       "inconsistent_rows": 1,
       "ml_ready": true,
-      "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
-      "hf_repo_id": "destatis/index-bruttoverdienste-x13"
+      "note": "no_date_column",
+      "hf_repo_id": "destatis/index-bruttoverdienste-x13",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/index_lohnnebenkosten_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/index_lohnnebenkosten_bv41.csv",
       "rel_path": "static/de_/opendata/data/index_lohnnebenkosten_bv41.csv",
-      "sha256": "c612a3227d18fb4666ccb8e932319fbdea0f4fca6ccf256cf5eb1f7ae0d90239",
-      "bytes_size": 5825,
-      "rows": 118,
+      "sha256": "f2d15493e17486bc54a549f8fdce077c19e777e40083ee31169c516b76104ea4",
+      "bytes_size": 5683,
+      "rows": 798,
       "columns": 8,
       "numeric_ratio": 0.875,
-      "missing_ratio": 0.00211864406779661,
+      "missing_ratio": 0.007608695652173913,
       "inconsistent_rows": 2,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
-      "hf_repo_id": "destatis/index-lohnnebenkosten-bv41"
+      "hf_repo_id": "destatis/index-lohnnebenkosten-bv41",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/index_lohnnebenkosten_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/index_lohnnebenkosten_x13.csv",
       "rel_path": "static/de_/opendata/data/index_lohnnebenkosten_x13.csv",
-      "sha256": "5d37307f616568862176925e70fe8546605b382b77f634482c69bdecd80ab350",
-      "bytes_size": 5138,
-      "rows": 118,
+      "sha256": "f7b958faa5251a7669bb8982585f6059d0a2cb867539df16b9f8b252e4534e41",
+      "bytes_size": 5036,
+      "rows": 116,
       "columns": 7,
-      "numeric_ratio": 0.8571428571428571,
-      "missing_ratio": 0.004842615012106538,
+      "numeric_ratio": 0.14285714285714285,
+      "missing_ratio": 0.0,
       "inconsistent_rows": 1,
       "ml_ready": true,
-      "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
-      "hf_repo_id": "destatis/index-lohnnebenkosten-x13"
+      "note": "no_date_column",
+      "hf_repo_id": "destatis/index-lohnnebenkosten-x13",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/kurzarbeiter_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/kurzarbeiter_bv41.csv",
@@ -1828,37 +1828,37 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/kurzarbeiter-bv41",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/lkw_maut_fahrleistungsindex_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/lkw_maut_fahrleistungsindex_bv41.csv",
       "rel_path": "static/de_/opendata/data/lkw_maut_fahrleistungsindex_bv41.csv",
-      "sha256": "f447b5253006401664ef8480757d41120a233c9a51e5f01b8c4e2e0290ed85a5",
-      "bytes_size": 7816,
-      "rows": 254,
+      "sha256": "b5dc80d9af59dec412184063f3d338e6b1eea152c9c15112a0e9eef021a7d570",
+      "bytes_size": 7845,
+      "rows": 1010,
       "columns": 5,
       "numeric_ratio": 0.8,
-      "missing_ratio": 0.007874015748031496,
+      "missing_ratio": 0.00784313725490196,
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
-      "hf_repo_id": "destatis/lkw-maut-fahrleistungsindex-bv41"
+      "hf_repo_id": "destatis/lkw-maut-fahrleistungsindex-bv41",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/lkw_maut_fahrleistungsindex_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/lkw_maut_fahrleistungsindex_x13.csv",
       "rel_path": "static/de_/opendata/data/lkw_maut_fahrleistungsindex_x13.csv",
-      "sha256": "c9ffbf87ed4463f1b8bdd34feb3c255f1b1d63b9b34ae2637889a0c372c6758d",
-      "bytes_size": 7911,
-      "rows": 254,
+      "sha256": "151295f92b8ae1de906e6b66cc0071dea05816e583ad6ea56eef21654a4b52f6",
+      "bytes_size": 7940,
+      "rows": 1010,
       "columns": 5,
       "numeric_ratio": 0.8,
-      "missing_ratio": 0.007874015748031496,
+      "missing_ratio": 0.00784313725490196,
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
-      "hf_repo_id": "destatis/lkw-maut-fahrleistungsindex-x13"
+      "hf_repo_id": "destatis/lkw-maut-fahrleistungsindex-x13",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/preise_ueberblick_originalwert.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/preise_ueberblick_originalwert.csv",
@@ -1873,7 +1873,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/preise-ueberblick-originalwert",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/private_konsumausgaben_preisbereinigt_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/private_konsumausgaben_preisbereinigt_bv41.csv",
@@ -1887,7 +1887,7 @@
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00",
       "hf_repo_id": "destatis/private-konsumausgaben-preisbereinigt-bv41"
     },
     "static/de_/opendata/data/private_konsumausgaben_preisbereinigt_x13.csv": {
@@ -1903,352 +1903,352 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/private-konsumausgaben-preisbereinigt-x13",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/produktionsindex_bauhauptgewerbe_hochbau_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/produktionsindex_bauhauptgewerbe_hochbau_bv41.csv",
       "rel_path": "static/de_/opendata/data/produktionsindex_bauhauptgewerbe_hochbau_bv41.csv",
-      "sha256": "ad2595c2a66e5984f2b2e02b5fd75746aac7155eb4397298841f175f3cd7c95e",
-      "bytes_size": 10825,
-      "rows": 349,
+      "sha256": "321b4f8ed53a7aaf7db01a36b6d349280004580247e335472a7b9af1df0ad183",
+      "bytes_size": 10855,
+      "rows": 1390,
       "columns": 5,
       "numeric_ratio": 0.8,
-      "missing_ratio": 0.0057306590257879654,
+      "missing_ratio": 0.005714285714285714,
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
-      "hf_repo_id": "destatis/produktionsindex-bauhauptgewerbe-hochbau-bv41"
+      "hf_repo_id": "destatis/produktionsindex-bauhauptgewerbe-hochbau-bv41",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/produktionsindex_bauhauptgewerbe_hochbau_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/produktionsindex_bauhauptgewerbe_hochbau_x13.csv",
       "rel_path": "static/de_/opendata/data/produktionsindex_bauhauptgewerbe_hochbau_x13.csv",
-      "sha256": "87e011b7cedca7acfbe27df8ecd49379eed1305d231ba9e71fd090aea3995d5b",
-      "bytes_size": 10899,
-      "rows": 349,
+      "sha256": "7657ba69ccf1c294af8be1ea66f78a34eab35db5a65392fe96b58104f6a16de6",
+      "bytes_size": 10930,
+      "rows": 1390,
       "columns": 5,
       "numeric_ratio": 0.8,
-      "missing_ratio": 0.0057306590257879654,
+      "missing_ratio": 0.005714285714285714,
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
-      "hf_repo_id": "destatis/produktionsindex-bauhauptgewerbe-hochbau-x13"
+      "hf_repo_id": "destatis/produktionsindex-bauhauptgewerbe-hochbau-x13",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/produktionsindex_bauhauptgewerbe_insgesamt_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/produktionsindex_bauhauptgewerbe_insgesamt_bv41.csv",
       "rel_path": "static/de_/opendata/data/produktionsindex_bauhauptgewerbe_insgesamt_bv41.csv",
-      "sha256": "3b08fe052a24f473618061740a0a3e32c200ddfd9d416d7bc82d6b0e0c6fd6e6",
-      "bytes_size": 10811,
-      "rows": 349,
+      "sha256": "b9a2ebf01397b710346f7c7a20acba6df79c08e691b7ba0bcf5f9c171dc02535",
+      "bytes_size": 10836,
+      "rows": 1390,
       "columns": 5,
       "numeric_ratio": 0.8,
-      "missing_ratio": 0.0057306590257879654,
+      "missing_ratio": 0.005714285714285714,
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
-      "hf_repo_id": "destatis/produktionsindex-bauhauptgewerbe-insgesamt-bv41"
+      "hf_repo_id": "destatis/produktionsindex-bauhauptgewerbe-insgesamt-bv41",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/produktionsindex_bauhauptgewerbe_insgesamt_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/produktionsindex_bauhauptgewerbe_insgesamt_x13.csv",
       "rel_path": "static/de_/opendata/data/produktionsindex_bauhauptgewerbe_insgesamt_x13.csv",
-      "sha256": "99d943e7a97f819b3d3d458057dd59d2b1a66b510d2eebf854da355cbfb49ebe",
-      "bytes_size": 10895,
-      "rows": 349,
+      "sha256": "eb1cd2d080d6c70f21826f11af7b62a959875b72ef5c724163c5b262dcf3b10d",
+      "bytes_size": 10925,
+      "rows": 1390,
       "columns": 5,
       "numeric_ratio": 0.8,
-      "missing_ratio": 0.0057306590257879654,
+      "missing_ratio": 0.005714285714285714,
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
-      "hf_repo_id": "destatis/produktionsindex-bauhauptgewerbe-insgesamt-x13"
+      "hf_repo_id": "destatis/produktionsindex-bauhauptgewerbe-insgesamt-x13",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/produktionsindex_bauhauptgewerbe_tiefbau_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/produktionsindex_bauhauptgewerbe_tiefbau_bv41.csv",
       "rel_path": "static/de_/opendata/data/produktionsindex_bauhauptgewerbe_tiefbau_bv41.csv",
-      "sha256": "d2cf34df765f8d727f3fea57236dfb9fc211c963757f990074b2da54d0222366",
-      "bytes_size": 10833,
-      "rows": 349,
+      "sha256": "2e0e8503e3c1e630e6ad9a9e878289c797f6f33223f25931ac9c80a6ad78e6a7",
+      "bytes_size": 10861,
+      "rows": 1390,
       "columns": 5,
       "numeric_ratio": 0.8,
-      "missing_ratio": 0.0057306590257879654,
+      "missing_ratio": 0.005714285714285714,
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
-      "hf_repo_id": "destatis/produktionsindex-bauhauptgewerbe-tiefbau-bv41"
+      "hf_repo_id": "destatis/produktionsindex-bauhauptgewerbe-tiefbau-bv41",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/produktionsindex_bauhauptgewerbe_tiefbau_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/produktionsindex_bauhauptgewerbe_tiefbau_x13.csv",
       "rel_path": "static/de_/opendata/data/produktionsindex_bauhauptgewerbe_tiefbau_x13.csv",
-      "sha256": "2f4fa25b15b5532c3eba9cb8b7320c8662f0a521bb31ffa17c110bd8f8edcf1b",
-      "bytes_size": 10944,
-      "rows": 349,
+      "sha256": "f490aba6e3a26602a0c0d608ca6bcf4b5d4921f585ad4ff947754c9308d8b4ac",
+      "bytes_size": 10976,
+      "rows": 1390,
       "columns": 5,
       "numeric_ratio": 0.8,
-      "missing_ratio": 0.0057306590257879654,
+      "missing_ratio": 0.005714285714285714,
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
-      "hf_repo_id": "destatis/produktionsindex-bauhauptgewerbe-tiefbau-x13"
+      "hf_repo_id": "destatis/produktionsindex-bauhauptgewerbe-tiefbau-x13",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/produktionsindex_energie_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/produktionsindex_energie_bv41.csv",
       "rel_path": "static/de_/opendata/data/produktionsindex_energie_bv41.csv",
-      "sha256": "52d37f0c1ac6c29eeb38453c89230bcfe7dbea507cbbefcb006dbee649fb4ad5",
-      "bytes_size": 11274,
-      "rows": 349,
+      "sha256": "440a6f4a35cc9fb23b48316096ac49bac665af0bdb961b5564e67df94d751e89",
+      "bytes_size": 11303,
+      "rows": 1390,
       "columns": 5,
       "numeric_ratio": 0.8,
-      "missing_ratio": 0.0057306590257879654,
+      "missing_ratio": 0.005714285714285714,
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
-      "hf_repo_id": "destatis/produktionsindex-energie-bv41"
+      "hf_repo_id": "destatis/produktionsindex-energie-bv41",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/produktionsindex_energie_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/produktionsindex_energie_x13.csv",
       "rel_path": "static/de_/opendata/data/produktionsindex_energie_x13.csv",
-      "sha256": "a9cc80c07e3f9743b9b6b0bd1b68efd844a978b566646d02ff47a7bf02339b57",
-      "bytes_size": 11340,
-      "rows": 349,
+      "sha256": "868c97a8123a8bfc137553f762c42768d9d6b2351d8159e3da7cb0a97e48c1fc",
+      "bytes_size": 11368,
+      "rows": 1390,
       "columns": 5,
       "numeric_ratio": 0.8,
-      "missing_ratio": 0.0057306590257879654,
+      "missing_ratio": 0.005714285714285714,
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
-      "hf_repo_id": "destatis/produktionsindex-energie-x13"
+      "hf_repo_id": "destatis/produktionsindex-energie-x13",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/produktionsindex_gebrauchsgueter_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/produktionsindex_gebrauchsgueter_bv41.csv",
       "rel_path": "static/de_/opendata/data/produktionsindex_gebrauchsgueter_bv41.csv",
-      "sha256": "580e4b323884c7e33576a099525503c12a7f921fde0f0a9f81f61af68df74742",
-      "bytes_size": 11055,
-      "rows": 349,
+      "sha256": "f1e16c1da7808c1543bc6af41b048819cb4d5acf51b76a7e367a602fb8104396",
+      "bytes_size": 11085,
+      "rows": 1390,
       "columns": 5,
       "numeric_ratio": 0.8,
-      "missing_ratio": 0.0057306590257879654,
+      "missing_ratio": 0.005714285714285714,
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
-      "hf_repo_id": "destatis/produktionsindex-gebrauchsgueter-bv41"
+      "hf_repo_id": "destatis/produktionsindex-gebrauchsgueter-bv41",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/produktionsindex_gebrauchsgueter_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/produktionsindex_gebrauchsgueter_x13.csv",
       "rel_path": "static/de_/opendata/data/produktionsindex_gebrauchsgueter_x13.csv",
-      "sha256": "a477607dd9df5d5fe36c664b6e2f09e31f21d03dcfcbf6dc0a770f1646f8c751",
-      "bytes_size": 11111,
-      "rows": 349,
+      "sha256": "27fe5fd65072c19374a13829720bba5331977f555b76fa57a834250ba6bbd58f",
+      "bytes_size": 11139,
+      "rows": 1390,
       "columns": 5,
       "numeric_ratio": 0.8,
-      "missing_ratio": 0.0057306590257879654,
+      "missing_ratio": 0.005714285714285714,
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
-      "hf_repo_id": "destatis/produktionsindex-gebrauchsgueter-x13"
+      "hf_repo_id": "destatis/produktionsindex-gebrauchsgueter-x13",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/produktionsindex_industrie_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/produktionsindex_industrie_bv41.csv",
       "rel_path": "static/de_/opendata/data/produktionsindex_industrie_bv41.csv",
-      "sha256": "e2fd4b86d2fb8fc9fe444ed1261bc289b39e0ca0905cfcc0b562cfc1e9267073",
-      "bytes_size": 10869,
-      "rows": 349,
+      "sha256": "04ddce0ded28e6a653502f506b08c2b18327ccf4c69b2fdb3f65427722405835",
+      "bytes_size": 10903,
+      "rows": 1390,
       "columns": 5,
       "numeric_ratio": 0.8,
-      "missing_ratio": 0.0057306590257879654,
+      "missing_ratio": 0.005714285714285714,
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
-      "hf_repo_id": "destatis/produktionsindex-industrie-bv41"
+      "hf_repo_id": "destatis/produktionsindex-industrie-bv41",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/produktionsindex_industrie_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/produktionsindex_industrie_x13.csv",
       "rel_path": "static/de_/opendata/data/produktionsindex_industrie_x13.csv",
-      "sha256": "ad34ab9f9869f176961ee2f1ff6d3e03c10ca346910aa70b4e364a4fb9e74539",
-      "bytes_size": 10965,
-      "rows": 349,
+      "sha256": "60f1099899cc421fcdd87e7d13bea52b8874d15e7d3dd29910422c324b3aa8e4",
+      "bytes_size": 10997,
+      "rows": 1390,
       "columns": 5,
       "numeric_ratio": 0.8,
-      "missing_ratio": 0.0057306590257879654,
+      "missing_ratio": 0.005714285714285714,
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
-      "hf_repo_id": "destatis/produktionsindex-industrie-x13"
+      "hf_repo_id": "destatis/produktionsindex-industrie-x13",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/produktionsindex_investitionsgueter_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/produktionsindex_investitionsgueter_bv41.csv",
       "rel_path": "static/de_/opendata/data/produktionsindex_investitionsgueter_bv41.csv",
-      "sha256": "16a9c9208b8527a5b80bee59fc437af67613aaca0de435d7b511ad49c18cfd7d",
-      "bytes_size": 10984,
-      "rows": 349,
+      "sha256": "521fb13d3fe4cfc7cb077f4d56ac1e8d8d3b000dd548894944f02db413933b10",
+      "bytes_size": 11027,
+      "rows": 1390,
       "columns": 5,
       "numeric_ratio": 0.8,
-      "missing_ratio": 0.0057306590257879654,
+      "missing_ratio": 0.005714285714285714,
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
-      "hf_repo_id": "destatis/produktionsindex-investitionsgueter-bv41"
+      "hf_repo_id": "destatis/produktionsindex-investitionsgueter-bv41",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/produktionsindex_investitionsgueter_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/produktionsindex_investitionsgueter_x13.csv",
       "rel_path": "static/de_/opendata/data/produktionsindex_investitionsgueter_x13.csv",
-      "sha256": "ea8fceb0eedae11e511fb678714fad46ada8538fdcdb773d4f56a13547129598",
-      "bytes_size": 11077,
-      "rows": 349,
+      "sha256": "3bbcb815538f4acc03a789c2607a2d526ab63ff4b643a4073714175accfdec51",
+      "bytes_size": 11118,
+      "rows": 1390,
       "columns": 5,
       "numeric_ratio": 0.8,
-      "missing_ratio": 0.0057306590257879654,
+      "missing_ratio": 0.005714285714285714,
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
-      "hf_repo_id": "destatis/produktionsindex-investitionsgueter-x13"
+      "hf_repo_id": "destatis/produktionsindex-investitionsgueter-x13",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/produktionsindex_produzierendes_gewerbe_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/produktionsindex_produzierendes_gewerbe_bv41.csv",
       "rel_path": "static/de_/opendata/data/produktionsindex_produzierendes_gewerbe_bv41.csv",
-      "sha256": "6aa6ee8029de8251d07c1cda8e8cd924c7d384a982a26b66a474775aae55d1d6",
-      "bytes_size": 10825,
-      "rows": 349,
+      "sha256": "2c2e1046aea18823257a7b5bd298edb6b463aa08cca768675437c12892b96533",
+      "bytes_size": 10857,
+      "rows": 1390,
       "columns": 5,
       "numeric_ratio": 0.8,
-      "missing_ratio": 0.0057306590257879654,
+      "missing_ratio": 0.005714285714285714,
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
-      "hf_repo_id": "destatis/produktionsindex-produzierendes-gewerbe-bv41"
+      "hf_repo_id": "destatis/produktionsindex-produzierendes-gewerbe-bv41",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/produktionsindex_produzierendes_gewerbe_originalwert.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/produktionsindex_produzierendes_gewerbe_originalwert.csv",
       "rel_path": "static/de_/opendata/data/produktionsindex_produzierendes_gewerbe_originalwert.csv",
-      "sha256": "17402c8caf4d21ae06753f597423ef46552011e22a78fc4f63dbcc2e632f8b06",
-      "bytes_size": 13753,
-      "rows": 314,
+      "sha256": "9381eaa3107a09290ccaa9b272153c2fd869ae9eea7d12a17cccab2eac5c7bdd",
+      "bytes_size": 13795,
+      "rows": 315,
       "columns": 7,
       "numeric_ratio": 0.14285714285714285,
       "missing_ratio": 0.0,
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
-      "hf_repo_id": "destatis/produktionsindex-produzierendes-gewerbe-originalwert"
+      "hf_repo_id": "destatis/produktionsindex-produzierendes-gewerbe-originalwert",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/produktionsindex_produzierendes_gewerbe_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/produktionsindex_produzierendes_gewerbe_x13.csv",
       "rel_path": "static/de_/opendata/data/produktionsindex_produzierendes_gewerbe_x13.csv",
-      "sha256": "c2afe19dedfaa4927b869fcd132e87e9e082e4c44bd62e7bb8e63bf02bb4abd7",
-      "bytes_size": 10923,
-      "rows": 349,
+      "sha256": "3f4ef294a2c8092b7ada69d1cf399b4b1c465d465d2d18149c487077779e7143",
+      "bytes_size": 10956,
+      "rows": 1390,
       "columns": 5,
       "numeric_ratio": 0.8,
-      "missing_ratio": 0.0057306590257879654,
+      "missing_ratio": 0.005714285714285714,
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
-      "hf_repo_id": "destatis/produktionsindex-produzierendes-gewerbe-x13"
+      "hf_repo_id": "destatis/produktionsindex-produzierendes-gewerbe-x13",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/produktionsindex_verarbeitendes_gewerbe_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/produktionsindex_verarbeitendes_gewerbe_bv41.csv",
       "rel_path": "static/de_/opendata/data/produktionsindex_verarbeitendes_gewerbe_bv41.csv",
-      "sha256": "33455011042f7018e251cd2410d8dd47b43e952dc5d221ef541fab9b095399c6",
-      "bytes_size": 10885,
-      "rows": 349,
+      "sha256": "ca8542974e4a5b654141b108fd573715dad058980f0deb60c100e7eefb4a8d4e",
+      "bytes_size": 10918,
+      "rows": 1390,
       "columns": 5,
       "numeric_ratio": 0.8,
-      "missing_ratio": 0.0057306590257879654,
+      "missing_ratio": 0.005714285714285714,
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
-      "hf_repo_id": "destatis/produktionsindex-verarbeitendes-gewerbe-bv41"
+      "hf_repo_id": "destatis/produktionsindex-verarbeitendes-gewerbe-bv41",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/produktionsindex_verarbeitendes_gewerbe_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/produktionsindex_verarbeitendes_gewerbe_x13.csv",
       "rel_path": "static/de_/opendata/data/produktionsindex_verarbeitendes_gewerbe_x13.csv",
-      "sha256": "1bc65fb39f9fa83b8ba61ac2eaace4ffb798a02158a879a34572a9dd086b5f4b",
-      "bytes_size": 10981,
-      "rows": 349,
+      "sha256": "fcc37c671f96427c8e7818968f05ee0c22dd267979d97ae0fbdc8439131fc46d",
+      "bytes_size": 11010,
+      "rows": 1390,
       "columns": 5,
       "numeric_ratio": 0.8,
-      "missing_ratio": 0.0057306590257879654,
+      "missing_ratio": 0.005714285714285714,
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
-      "hf_repo_id": "destatis/produktionsindex-verarbeitendes-gewerbe-x13"
+      "hf_repo_id": "destatis/produktionsindex-verarbeitendes-gewerbe-x13",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/produktionsindex_verbrauchsgueter_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/produktionsindex_verbrauchsgueter_bv41.csv",
       "rel_path": "static/de_/opendata/data/produktionsindex_verbrauchsgueter_bv41.csv",
-      "sha256": "9668122d9de7b5055a3b1e97444e796f5aaa8b27839df6a76d4dd4f3284da781",
-      "bytes_size": 10836,
-      "rows": 349,
+      "sha256": "b5bb881e3475361b1f445e177b93b406eed7ab8ed72dfc941d26ffdd53ae55a1",
+      "bytes_size": 10867,
+      "rows": 1390,
       "columns": 5,
       "numeric_ratio": 0.8,
-      "missing_ratio": 0.0057306590257879654,
+      "missing_ratio": 0.005714285714285714,
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
-      "hf_repo_id": "destatis/produktionsindex-verbrauchsgueter-bv41"
+      "hf_repo_id": "destatis/produktionsindex-verbrauchsgueter-bv41",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/produktionsindex_verbrauchsgueter_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/produktionsindex_verbrauchsgueter_x13.csv",
       "rel_path": "static/de_/opendata/data/produktionsindex_verbrauchsgueter_x13.csv",
-      "sha256": "3421d5a51caea4906098125df8cf999451bdf34e1d063b31824e6d05ccf60012",
-      "bytes_size": 10914,
-      "rows": 349,
+      "sha256": "5d3bbb2acf10b2b30a5abaa9b0ce8bfd79f75bab0157932c56b351c40a9ee9cc",
+      "bytes_size": 10943,
+      "rows": 1390,
       "columns": 5,
       "numeric_ratio": 0.8,
-      "missing_ratio": 0.0057306590257879654,
+      "missing_ratio": 0.005714285714285714,
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
-      "hf_repo_id": "destatis/produktionsindex-verbrauchsgueter-x13"
+      "hf_repo_id": "destatis/produktionsindex-verbrauchsgueter-x13",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/produktionsindex_vorleistungsgueter_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/produktionsindex_vorleistungsgueter_bv41.csv",
       "rel_path": "static/de_/opendata/data/produktionsindex_vorleistungsgueter_bv41.csv",
-      "sha256": "c017077565b1acbd713bc29002a21eb301dcb20036578dccaf57928d2afa2558",
-      "bytes_size": 10785,
-      "rows": 349,
+      "sha256": "2024c03c2c688d391c82df41fbf2cdd2cb7891c025bf56d3b517e8743799a0d4",
+      "bytes_size": 10817,
+      "rows": 1390,
       "columns": 5,
       "numeric_ratio": 0.8,
-      "missing_ratio": 0.0057306590257879654,
+      "missing_ratio": 0.005714285714285714,
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
-      "hf_repo_id": "destatis/produktionsindex-vorleistungsgueter-bv41"
+      "hf_repo_id": "destatis/produktionsindex-vorleistungsgueter-bv41",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/produktionsindex_vorleistungsgueter_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/produktionsindex_vorleistungsgueter_x13.csv",
       "rel_path": "static/de_/opendata/data/produktionsindex_vorleistungsgueter_x13.csv",
-      "sha256": "102910aa4e050384e373acdacef684512dbdac635c4dfd92fbf7d6b16affdfc8",
-      "bytes_size": 10849,
-      "rows": 349,
+      "sha256": "f4708aa42f8662ff6b630b1f329acfe74fc12eca8b92050b191499f33dbc6354",
+      "bytes_size": 10880,
+      "rows": 1390,
       "columns": 5,
       "numeric_ratio": 0.8,
-      "missing_ratio": 0.0057306590257879654,
+      "missing_ratio": 0.005714285714285714,
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
-      "hf_repo_id": "destatis/produktionsindex-vorleistungsgueter-x13"
+      "hf_repo_id": "destatis/produktionsindex-vorleistungsgueter-x13",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/selbststaendige_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/selbststaendige_bv41.csv",
@@ -2262,7 +2262,7 @@
       "inconsistent_rows": 1,
       "ml_ready": true,
       "note": "ok",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00",
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00",
       "hf_repo_id": "destatis/selbststaendige-bv41"
     },
     "static/de_/opendata/data/selbststaendige_x13.csv": {
@@ -2278,7 +2278,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/selbststaendige-x13",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/uebernachtungen_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/uebernachtungen_bv41.csv",
@@ -2293,7 +2293,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/uebernachtungen-bv41",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/umsatz_ausgew_dienstleistungsbereiche.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/umsatz_ausgew_dienstleistungsbereiche.csv",
@@ -2308,7 +2308,7 @@
       "ml_ready": true,
       "note": "no_date_column",
       "hf_repo_id": "destatis/umsatz-ausgew-dienstleistungsbereiche",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/umsatz_ausgew_dienstleistungsbereiche_ksbx13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/umsatz_ausgew_dienstleistungsbereiche_ksbx13.csv",
@@ -2322,7 +2322,7 @@
       "inconsistent_rows": 0,
       "ml_ready": false,
       "note": "too few lines",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/umsatzindex_gebrauchsgueter_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/umsatzindex_gebrauchsgueter_bv41.csv",
@@ -2337,7 +2337,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/umsatzindex-gebrauchsgueter-bv41",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/umsatzindex_gebrauchsgueter_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/umsatzindex_gebrauchsgueter_x13.csv",
@@ -2352,7 +2352,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/umsatzindex-gebrauchsgueter-x13",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/umsatzindex_investitionsgueter_ausland_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/umsatzindex_investitionsgueter_ausland_bv41.csv",
@@ -2367,7 +2367,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/umsatzindex-investitionsgueter-ausland-bv41",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/umsatzindex_investitionsgueter_ausland_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/umsatzindex_investitionsgueter_ausland_x13.csv",
@@ -2382,7 +2382,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/umsatzindex-investitionsgueter-ausland-x13",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/umsatzindex_investitionsgueter_inland_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/umsatzindex_investitionsgueter_inland_bv41.csv",
@@ -2397,7 +2397,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/umsatzindex-investitionsgueter-inland-bv41",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/umsatzindex_investitionsgueter_inland_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/umsatzindex_investitionsgueter_inland_x13.csv",
@@ -2412,7 +2412,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/umsatzindex-investitionsgueter-inland-x13",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/umsatzindex_investitionsgueter_insgesamt_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/umsatzindex_investitionsgueter_insgesamt_bv41.csv",
@@ -2427,7 +2427,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/umsatzindex-investitionsgueter-insgesamt-bv41",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/umsatzindex_investitionsgueter_insgesamt_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/umsatzindex_investitionsgueter_insgesamt_x13.csv",
@@ -2442,7 +2442,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/umsatzindex-investitionsgueter-insgesamt-x13",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/umsatzindex_verarb_gewerbe_originalwert.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/umsatzindex_verarb_gewerbe_originalwert.csv",
@@ -2457,7 +2457,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/umsatzindex-verarb-gewerbe-originalwert",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/umsatzindex_verarbeitendes_gewerbe_ausland_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/umsatzindex_verarbeitendes_gewerbe_ausland_bv41.csv",
@@ -2472,7 +2472,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/umsatzindex-verarbeitendes-gewerbe-ausland-bv41",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/umsatzindex_verarbeitendes_gewerbe_ausland_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/umsatzindex_verarbeitendes_gewerbe_ausland_x13.csv",
@@ -2487,7 +2487,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/umsatzindex-verarbeitendes-gewerbe-ausland-x13",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/umsatzindex_verarbeitendes_gewerbe_inland_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/umsatzindex_verarbeitendes_gewerbe_inland_bv41.csv",
@@ -2502,7 +2502,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/umsatzindex-verarbeitendes-gewerbe-inland-bv41",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/umsatzindex_verarbeitendes_gewerbe_inland_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/umsatzindex_verarbeitendes_gewerbe_inland_x13.csv",
@@ -2517,7 +2517,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/umsatzindex-verarbeitendes-gewerbe-inland-x13",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/umsatzindex_verarbeitendes_gewerbe_insgesamt_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/umsatzindex_verarbeitendes_gewerbe_insgesamt_bv41.csv",
@@ -2532,7 +2532,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/umsatzindex-verarbeitendes-gewerbe-insgesamt-bv41",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/umsatzindex_verarbeitendes_gewerbe_insgesamt_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/umsatzindex_verarbeitendes_gewerbe_insgesamt_x13.csv",
@@ -2547,7 +2547,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/umsatzindex-verarbeitendes-gewerbe-insgesamt-x13",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/umsatzindex_verbrauchsgueter_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/umsatzindex_verbrauchsgueter_bv41.csv",
@@ -2562,7 +2562,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/umsatzindex-verbrauchsgueter-bv41",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/umsatzindex_verbrauchsgueter_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/umsatzindex_verbrauchsgueter_x13.csv",
@@ -2577,7 +2577,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/umsatzindex-verbrauchsgueter-x13",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/umsatzindex_vorleistungsgueter_ausland_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/umsatzindex_vorleistungsgueter_ausland_bv41.csv",
@@ -2592,7 +2592,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/umsatzindex-vorleistungsgueter-ausland-bv41",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/umsatzindex_vorleistungsgueter_ausland_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/umsatzindex_vorleistungsgueter_ausland_x13.csv",
@@ -2607,7 +2607,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/umsatzindex-vorleistungsgueter-ausland-x13",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/umsatzindex_vorleistungsgueter_inland_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/umsatzindex_vorleistungsgueter_inland_bv41.csv",
@@ -2622,7 +2622,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/umsatzindex-vorleistungsgueter-inland-bv41",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/umsatzindex_vorleistungsgueter_inland_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/umsatzindex_vorleistungsgueter_inland_x13.csv",
@@ -2637,7 +2637,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/umsatzindex-vorleistungsgueter-inland-x13",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/umsatzindex_vorleistungsgueter_insgesamt_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/umsatzindex_vorleistungsgueter_insgesamt_bv41.csv",
@@ -2652,7 +2652,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/umsatzindex-vorleistungsgueter-insgesamt-bv41",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/umsatzindex_vorleistungsgueter_insgesamt_x13.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/umsatzindex_vorleistungsgueter_insgesamt_x13.csv",
@@ -2667,7 +2667,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/umsatzindex-vorleistungsgueter-insgesamt-x13",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/verbraucherpreisindex_gesamtindex_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/verbraucherpreisindex_gesamtindex_bv41.csv",
@@ -2682,7 +2682,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/verbraucherpreisindex-gesamtindex-bv41",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/verbraucherpreisindex_nahrungsmittel_getraenke_bv41.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/verbraucherpreisindex_nahrungsmittel_getraenke_bv41.csv",
@@ -2697,7 +2697,7 @@
       "ml_ready": true,
       "note": "ok",
       "hf_repo_id": "destatis/verbraucherpreisindex-nahrungsmittel-getraenke-bv41",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/verwendung_bruttoinlandsprodukt_originalwert.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/verwendung_bruttoinlandsprodukt_originalwert.csv",
@@ -2712,7 +2712,7 @@
       "ml_ready": true,
       "note": "no_date_column",
       "hf_repo_id": "destatis/verwendung-bruttoinlandsprodukt-originalwert",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     },
     "static/de_/opendata/data/verwendung_bruttoinlandsprodukt_preisbereinigt_originalwert.csv": {
       "source_url": "https://www.destatis.de/static/de_/opendata/data/verwendung_bruttoinlandsprodukt_preisbereinigt_originalwert.csv",
@@ -2727,8 +2727,8 @@
       "ml_ready": true,
       "note": "no_date_column",
       "hf_repo_id": "destatis/verwendung-bruttoinlandsprodukt-preisbereinigt-originalwert",
-      "last_seen_utc": "2026-06-08T10:19:15.638912+00:00"
+      "last_seen_utc": "2026-06-09T09:25:03.312181+00:00"
     }
   },
-  "updated_at": "2026-06-08T10:19:15.638912+00:00"
+  "updated_at": "2026-06-09T09:25:03.312181+00:00"
 }

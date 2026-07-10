@@ -1,5 +1,5 @@
-baupreisindizes,ingenieurbau_sowie_instandhaltung_von_wohngebuden_einschlielich_umsatzsteuer,col_3,col_4,col_5,col_6
-Datum;Stra�en,2021=100;Br�ckenimStra�enbau,2021=100;Ortskan�le,2021=100;InstandhaltungvonWohngeb�uden,2021=100;InstandhaltungenineinerWohnung,2021=100
+baupreisindizes,ingenieurbau_sowie_instandhaltung_von_wohngebaeuden_einschliesslich_umsatzsteuer,col_3,col_4,col_5,col_6
+Datum;Straßen,2021=100;BrückenimStraßenbau,2021=100;Ortskanäle,2021=100;InstandhaltungvonWohngebäuden,2021=100;InstandhaltungenineinerWohnung,2021=100
 01/08/2000;60,6;60,3;63,6;57,5;70,6
 01/11/2000;61,0;60,3;63,8;57,6;70,7
 01/02/2001;61,0;60,3;63,5;57,7;70,5
@@ -103,3 +103,4 @@ Datum;Stra�en,2021=100;Br�ckenimStra�enbau,2021=100;Ortskan�le,2021=100;
 01/08/2025;139,7;128,7;136,1;137,4;131,6
 01/11/2025;140,3;128,8;136,4;138,5;132,0
 01/02/2026;142,9;130,1;138,4;140,8;134,3
+01/05/2026;147,8;133,2;142,2;144,0;136,6

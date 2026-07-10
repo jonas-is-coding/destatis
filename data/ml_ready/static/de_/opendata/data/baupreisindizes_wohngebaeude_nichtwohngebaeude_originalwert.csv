@@ -1,5 +1,5 @@
-baupreisindizes,neubau_konventionelle_bauart_von_wohn_und_nichtwohngebuden_einschlielich_umsatzsteuer,col_3,col_4
-Datum;Wohngeb�ude,2021=100;B�rogeb�ude,2021=100;GewerblicheBetriebsgeb�ude,2021=100
+baupreisindizes,neubau_konventionelle_bauart_von_wohn_und_nichtwohngebaeuden_einschliesslich_umsatzsteuer,col_3,col_4
+Datum;Wohngebäude,2021=100;Bürogebäude,2021=100;GewerblicheBetriebsgebäude,2021=100
 01/08/2000;60,9;59,1;57,8
 01/11/2000;60,9;59,1;57,9
 01/02/2001;60,9;59,2;57,9
@@ -103,3 +103,4 @@ Datum;Wohngeb�ude,2021=100;B�rogeb�ude,2021=100;GewerblicheBetriebsgeb�u
 01/08/2025;134,3;136,4;135,5
 01/11/2025;135,0;137,3;136,1
 01/02/2026;137,0;139,4;138,1
+01/05/2026;140,3;142,7;141,4

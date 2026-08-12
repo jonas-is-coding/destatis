@@ -2389,7 +2389,7 @@ date,indicator,value
 01/09/2025,trendkonjunkturkomponente_bv_41_veraenderung_gegenueber_vormonat_in_,0.2
 01/09/2025,kalender_und_saisonbereinigte_werte_bv_41_2020100,122.6
 01/09/2025,kalender_und_saisonbereinigte_werte_bv_41_veraenderung_gegenueber_vormonat_in_,0.3
-01/09/2025,restkomponente_bv_41,0.2
+01/09/2025,restkomponente_bv_41,0.1
 01/10/2025,originalwert_2020100,123.0
 01/10/2025,originalwert_veraenderung_gegenueber_vorjahresmonat_in_,2.3
 01/10/2025,trendkonjunkturkomponente_bv_41_2020100,122.7
@@ -2427,7 +2427,7 @@ date,indicator,value
 01/02/2026,restkomponente_bv_41,-0.2
 01/03/2026,originalwert_2020100,124.5
 01/03/2026,originalwert_veraenderung_gegenueber_vorjahresmonat_in_,2.7
-01/03/2026,trendkonjunkturkomponente_bv_41_2020100,123.9
+01/03/2026,trendkonjunkturkomponente_bv_41_2020100,123.8
 01/03/2026,trendkonjunkturkomponente_bv_41_veraenderung_gegenueber_vormonat_in_,0.2
 01/03/2026,kalender_und_saisonbereinigte_werte_bv_41_2020100,124.5
 01/03/2026,kalender_und_saisonbereinigte_werte_bv_41_veraenderung_gegenueber_vormonat_in_,0.9
@@ -2453,3 +2453,10 @@ date,indicator,value
 01/06/2026,kalender_und_saisonbereinigte_werte_bv_41_2020100,124.6
 01/06/2026,kalender_und_saisonbereinigte_werte_bv_41_veraenderung_gegenueber_vormonat_in_,-0.0
 01/06/2026,restkomponente_bv_41,-0.0
+01/07/2026,originalwert_2020100,125.6
+01/07/2026,originalwert_veraenderung_gegenueber_vorjahresmonat_in_,2.8
+01/07/2026,trendkonjunkturkomponente_bv_41_2020100,124.9
+01/07/2026,trendkonjunkturkomponente_bv_41_veraenderung_gegenueber_vormonat_in_,0.2
+01/07/2026,kalender_und_saisonbereinigte_werte_bv_41_2020100,125.4
+01/07/2026,kalender_und_saisonbereinigte_werte_bv_41_veraenderung_gegenueber_vormonat_in_,0.6
+01/07/2026,restkomponente_bv_41,0.5

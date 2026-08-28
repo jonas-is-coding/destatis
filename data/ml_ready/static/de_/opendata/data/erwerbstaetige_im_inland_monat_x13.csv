@@ -216,7 +216,7 @@ date,indicator,value
 01/11/2001,originalwert_in_1000,40177
 01/11/2001,originalwert_veraenderung_gegenueber_vormonat_in_,0.1
 01/11/2001,originalwert_veraenderung_gegenueber_vorjahresmonat_in_,-0.5
-01/11/2001,saison_und_kalenderbereinigte_werte_nach_x_13_jdemetra_in_1000,39821
+01/11/2001,saison_und_kalenderbereinigte_werte_nach_x_13_jdemetra_in_1000,39820
 01/12/2001,originalwert_in_1000,39977
 01/12/2001,originalwert_veraenderung_gegenueber_vormonat_in_,-0.5
 01/12/2001,originalwert_veraenderung_gegenueber_vorjahresmonat_in_,-0.5
@@ -248,7 +248,7 @@ date,indicator,value
 01/07/2002,originalwert_in_1000,39711
 01/07/2002,originalwert_veraenderung_gegenueber_vormonat_in_,0.1
 01/07/2002,originalwert_veraenderung_gegenueber_vorjahresmonat_in_,-0.4
-01/07/2002,saison_und_kalenderbereinigte_werte_nach_x_13_jdemetra_in_1000,39682
+01/07/2002,saison_und_kalenderbereinigte_werte_nach_x_13_jdemetra_in_1000,39683
 01/08/2002,originalwert_in_1000,39699
 01/08/2002,originalwert_veraenderung_gegenueber_vormonat_in_,-0.0
 01/08/2002,originalwert_veraenderung_gegenueber_vorjahresmonat_in_,-0.5
@@ -256,7 +256,7 @@ date,indicator,value
 01/09/2002,originalwert_in_1000,39881
 01/09/2002,originalwert_veraenderung_gegenueber_vormonat_in_,0.5
 01/09/2002,originalwert_veraenderung_gegenueber_vorjahresmonat_in_,-0.5
-01/09/2002,saison_und_kalenderbereinigte_werte_nach_x_13_jdemetra_in_1000,39569
+01/09/2002,saison_und_kalenderbereinigte_werte_nach_x_13_jdemetra_in_1000,39568
 01/10/2002,originalwert_in_1000,39860
 01/10/2002,originalwert_veraenderung_gegenueber_vormonat_in_,-0.1
 01/10/2002,originalwert_veraenderung_gegenueber_vorjahresmonat_in_,-0.7
@@ -272,7 +272,7 @@ date,indicator,value
 01/01/2003,originalwert_in_1000,39024
 01/01/2003,originalwert_veraenderung_gegenueber_vormonat_in_,-1.4
 01/01/2003,originalwert_veraenderung_gegenueber_vorjahresmonat_in_,-1.2
-01/01/2003,saison_und_kalenderbereinigte_werte_nach_x_13_jdemetra_in_1000,39392
+01/01/2003,saison_und_kalenderbereinigte_werte_nach_x_13_jdemetra_in_1000,39391
 01/02/2003,originalwert_in_1000,39048
 01/02/2003,originalwert_veraenderung_gegenueber_vormonat_in_,0.1
 01/02/2003,originalwert_veraenderung_gegenueber_vorjahresmonat_in_,-1.2
@@ -328,7 +328,7 @@ date,indicator,value
 01/03/2004,originalwert_in_1000,39067
 01/03/2004,originalwert_veraenderung_gegenueber_vormonat_in_,0.3
 01/03/2004,originalwert_veraenderung_gegenueber_vorjahresmonat_in_,0.1
-01/03/2004,saison_und_kalenderbereinigte_werte_nach_x_13_jdemetra_in_1000,39370
+01/03/2004,saison_und_kalenderbereinigte_werte_nach_x_13_jdemetra_in_1000,39369
 01/04/2004,originalwert_in_1000,39213
 01/04/2004,originalwert_veraenderung_gegenueber_vormonat_in_,0.4
 01/04/2004,originalwert_veraenderung_gegenueber_vorjahresmonat_in_,0.6
@@ -1256,7 +1256,7 @@ date,indicator,value
 01/07/2023,originalwert_in_1000,45926
 01/07/2023,originalwert_veraenderung_gegenueber_vormonat_in_,-0.1
 01/07/2023,originalwert_veraenderung_gegenueber_vorjahresmonat_in_,0.7
-01/07/2023,saison_und_kalenderbereinigte_werte_nach_x_13_jdemetra_in_1000,45932
+01/07/2023,saison_und_kalenderbereinigte_werte_nach_x_13_jdemetra_in_1000,45931
 01/08/2023,originalwert_in_1000,45904
 01/08/2023,originalwert_veraenderung_gegenueber_vormonat_in_,-0.0
 01/08/2023,originalwert_veraenderung_gegenueber_vorjahresmonat_in_,0.5
@@ -1264,11 +1264,11 @@ date,indicator,value
 01/09/2023,originalwert_in_1000,46080
 01/09/2023,originalwert_veraenderung_gegenueber_vormonat_in_,0.4
 01/09/2023,originalwert_veraenderung_gegenueber_vorjahresmonat_in_,0.4
-01/09/2023,saison_und_kalenderbereinigte_werte_nach_x_13_jdemetra_in_1000,45918
+01/09/2023,saison_und_kalenderbereinigte_werte_nach_x_13_jdemetra_in_1000,45917
 01/10/2023,originalwert_in_1000,46173
 01/10/2023,originalwert_veraenderung_gegenueber_vormonat_in_,0.2
 01/10/2023,originalwert_veraenderung_gegenueber_vorjahresmonat_in_,0.4
-01/10/2023,saison_und_kalenderbereinigte_werte_nach_x_13_jdemetra_in_1000,45919
+01/10/2023,saison_und_kalenderbereinigte_werte_nach_x_13_jdemetra_in_1000,45918
 01/11/2023,originalwert_in_1000,46191
 01/11/2023,originalwert_veraenderung_gegenueber_vormonat_in_,0.0
 01/11/2023,originalwert_veraenderung_gegenueber_vorjahresmonat_in_,0.4
@@ -1308,7 +1308,7 @@ date,indicator,value
 01/08/2024,originalwert_in_1000,45925
 01/08/2024,originalwert_veraenderung_gegenueber_vormonat_in_,-0.1
 01/08/2024,originalwert_veraenderung_gegenueber_vorjahresmonat_in_,0.0
-01/08/2024,saison_und_kalenderbereinigte_werte_nach_x_13_jdemetra_in_1000,45954
+01/08/2024,saison_und_kalenderbereinigte_werte_nach_x_13_jdemetra_in_1000,45953
 01/09/2024,originalwert_in_1000,46093
 01/09/2024,originalwert_veraenderung_gegenueber_vormonat_in_,0.4
 01/09/2024,originalwert_veraenderung_gegenueber_vorjahresmonat_in_,0.0
@@ -1340,7 +1340,7 @@ date,indicator,value
 01/04/2025,originalwert_in_1000,45851
 01/04/2025,originalwert_veraenderung_gegenueber_vormonat_in_,0.2
 01/04/2025,originalwert_veraenderung_gegenueber_vorjahresmonat_in_,-0.1
-01/04/2025,saison_und_kalenderbereinigte_werte_nach_x_13_jdemetra_in_1000,45929
+01/04/2025,saison_und_kalenderbereinigte_werte_nach_x_13_jdemetra_in_1000,45930
 01/05/2025,originalwert_in_1000,45913
 01/05/2025,originalwert_veraenderung_gegenueber_vormonat_in_,0.1
 01/05/2025,originalwert_veraenderung_gegenueber_vorjahresmonat_in_,-0.2
@@ -1384,7 +1384,7 @@ date,indicator,value
 01/03/2026,originalwert_in_1000,45572
 01/03/2026,originalwert_veraenderung_gegenueber_vormonat_in_,0.2
 01/03/2026,originalwert_veraenderung_gegenueber_vorjahresmonat_in_,-0.4
-01/03/2026,saison_und_kalenderbereinigte_werte_nach_x_13_jdemetra_in_1000,45740
+01/03/2026,saison_und_kalenderbereinigte_werte_nach_x_13_jdemetra_in_1000,45741
 01/04/2026,originalwert_in_1000,45650
 01/04/2026,originalwert_veraenderung_gegenueber_vormonat_in_,0.2
 01/04/2026,originalwert_veraenderung_gegenueber_vorjahresmonat_in_,-0.4
@@ -1397,3 +1397,7 @@ date,indicator,value
 01/06/2026,originalwert_veraenderung_gegenueber_vormonat_in_,0.0
 01/06/2026,originalwert_veraenderung_gegenueber_vorjahresmonat_in_,-0.5
 01/06/2026,saison_und_kalenderbereinigte_werte_nach_x_13_jdemetra_in_1000,45672
+01/07/2026,originalwert_in_1000,45655
+01/07/2026,originalwert_veraenderung_gegenueber_vormonat_in_,-0.1
+01/07/2026,originalwert_veraenderung_gegenueber_vorjahresmonat_in_,-0.5
+01/07/2026,saison_und_kalenderbereinigte_werte_nach_x_13_jdemetra_in_1000,45658
